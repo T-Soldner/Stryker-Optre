@@ -1,0 +1,317 @@
+class CfgMods
+class CfgExperience
+class CfgAISkill
+class CfgAILevelPresets
+class CfgDifficultyPresets
+class CfgDifficulties
+class CfgInventory
+class CfgCurator
+class CfgSteamSettings
+class CfgBrains
+class CfgTextureToMaterial
+class CfgMaterials
+class CfgTLMaterials
+class CfgVehicleActions
+class CfgWeaponCursors
+class CfgMineTriggers
+class CfgAmmo
+class CfgRecoils
+class CfgMagazines
+class CfgWeapons
+class CfgInventoryGlobalVariable
+class CfgDestroySounds
+class CfgCloudlets
+class CfgOpticsEffect
+class CfgDestructPos
+class CfgDamageAround
+class CfgLights
+class CfgCloth
+class CfgVehicleClasses
+class CfgFactionClasses
+class CfgVehicles
+class CfgNonAIVehicles
+class CfgMarkedTargets
+class CfgFSMs
+class CfgFatigue
+class CfgFirstAid
+class CfgDiving
+class CfgBleeding
+class CfgPriority
+class CfgSkeletonParameters
+class CfgImprecision
+class CfgBreathing
+class CfgWeaponHandling
+class CfgPersonTurret
+class CfgMovesBasic
+class CfgGesturesMale
+class CfgSlopeLimits
+class CfgAnimation
+class CfgCollisions
+class CfgSlingLoading
+class CfgVoice
+class CfgVoiceTypes
+class CfgCoreData
+class CfgVehicleIcons
+class CfgCloudletShapes
+class CfgSaveThumbnails
+class cfgFormations
+class cfgWaypoints
+class CfgRagDollSkeletons
+class CfgVideoOptions
+class CfgSurfaceCharacters
+class CfgSurfaces
+class CfgSoundEnvironToControllers
+class CfgDefaultSettings
+class CfgPatches
+class CfgFontFamilies
+class CfgFonts
+class CfgEditCamera
+class CfgWrapperUI
+class CfgInGameUI
+	class CfgWeaponModeTextures
+	class CfgStaminaBar
+	class CfgStanceIndicatorTextures
+class cfgGroupIcons
+class CfgTaskTypes
+class CfgSimpleTasks
+class CfgDiary
+class CfgActions
+	class CfgInGameUI
+		class CfgWeaponModeTextures
+		class CfgStanceIndicatorTextures
+	class CfgCloudletShapes
+	class CfgMuzzleFlashes
+	class CfgBushNoMipmapTextures
+	class CfgWeapons
+	class CfgWeaponCursors
+	class CfgHoldActions
+	class CfgRevive
+	class CfgVehicles
+	class CfgVRNoMipmapTextures
+	class CfgMarkNoMipmapTextures
+	class CfgArgoNoMipmapTextures
+	class CfgTacopsNoMipmapTextures
+class CfgMissions
+							class CfgFunctions
+							class CfgFunctions
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgFunctions
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgFunctions
+							class CfgFunctions
+							class CfgFunctions
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgFunctions
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgFunctions
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgCommunicationMenu
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgCommunicationMenu
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgFunctions
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgNotifications
+							class CfgFunctions
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgCommunicationMenu
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgCommunicationMenu
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgCommunicationMenu
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgRespawnTemplates
+							class CfgFunctions
+							class CfgDebriefing
+							class CfgRespawnTemplates
+			class CfgFunctions
+			class CfgSounds
+			class CfgIdentities
+			class CfgSounds
+			class CfgIdentities
+			class CfgSounds
+			class CfgSounds
+class CfgRanks
+class CfgDefaultKeysPresets
+class CfgDetectors
+class CfgFaceWounds
+class CfgGlasses
+class CfgFaces
+class CfgMimics
+class CfgEnvSounds
+	class CfgEnvSpatialSounds
+class CfgHQIdentities
+class CfgHeads
+class CfgMusic
+class CfgSounds
+class CfgWhistleSound
+class CfgTitles
+class CfgIntro
+class CfgCredits
+class CfgCutScenes
+class CfgCameraEffects
+class CfgMarkers
+class CfgMarkerColors
+class CfgMarkerBrushes
+class CfgLocationTypes
+class CfgWorlds
+			class CfgEnvSpatialSounds: CfgEnvSpatialSounds
+			class CfgEnvSpatialSounds: CfgEnvSpatialSounds
+class CfgWorldList
+class CfgGroups
+class CfgAddons
+class CfgEditorObjects
+class CfgMPGameTypes
+class CfgLiveStats
+class CfgAchievements
+class CfgVoiceMask
+class CfgRumble
+class cfgBuldozer
+	class CfgCloudlets
+	class CfgGesturesMale
+	class CfgMovesBasic
+	class CfgMovesMaleSdr
+	class CfgMagazines
+	class CfgWeapons
+	class CfgVehicles
+	class CfgSFX
+class CfgCameraShake
+class CfgLensFlare
+class CfgSoundEffects
+class CfgMineDetectionCoefs
+class CfgFire
+class CfgIRLaserSettings
+class CfgFunctions
+class CfgRespawnTemplates
+class CfgPostProcessTemplates
+class CfgRemoteExecCommands
+class CfgRemoteExec
+class CfgCommands
+class CfgORBATDefault
+class CfgSettings
+class CfgEditorSubcategories
+class CfgEditorCategories
+class CfgDustEffectsAir
+class CfgDustEffectsMan
+class CfgDustEffectsCar
+class CfgDustEffectsTank
+class CfgDustEffectsTankSmall
+class CfgMuzzleFlashes
+class CfgBushNoMipmapTextures
+class CfgIdentities
+class CfgCuratorChallenges
+class CfgHintCategories
+class CfgHints
+class Cfg3DEN
+class CfgObjectCompositions
+class CfgCommunicationMenu
+class CfgFiringDrills
+class CfgMusicClasses
+class CfgDestroy
+class CfgMovesMaleSdr: CfgMovesBasic
+class CfgUnitInsignia
+class CfgUIGrids
+class CfgSFX
+class CfgMagazineWells
+class CfgExtendedAnimation
+class CfgMovesAnimal
+class CfgMovesButterfly
+class CfgMovesBird
+class CfgTasks
+class CfgMovesAnimal_Base_F
+class CfgMovesFishes_F: CfgMovesAnimal_Base_F
+class CfgMovesSharks_F: CfgMovesAnimal_Base_F
+class CfgMovesRabbit_F: CfgMovesAnimal_Base_F
+class CfgMovesSnakes_F: CfgMovesAnimal_Base_F
+class CfgMovesTurtle_F: CfgMovesAnimal_Base_F
+class CfgMovesHen_F: CfgMovesAnimal_Base_F
+class CfgMovesCock_F: CfgMovesAnimal_Base_F
+class CfgMovesDog_F: CfgMovesAnimal_Base_F
+class CfgMovesGoat_F: CfgMovesAnimal_Base_F
+class CfgMovesSheep_F: CfgMovesAnimal_Base_F
+class CfgCommunityGuide
+class CfgUIColors
+class CfgLanguages
+class CfgWeaponIcons
+class CfgLoadingTexts
+class CfgLoadingScreens
+class CfgChainOfCommand
+class CfgScriptPaths
+class CfgEditorLayouts
+class CfgNotifications
+class CfgDebriefing
+class CfgDLCNotifications
+class CfgHoldActions
+class CfgFeedbackEffects
+class CfgMainMenuSpotlight
+class CfgMarkerClasses
+class CfgDiaryPictures
+class CfgMovesFatigue
+class CfgSentences
+class CfgAnimationSourceSounds
+class CfgSoundShapes
+class CfgSoundCurves
+class CfgSoundShaders
+class CfgSoundSets
+class CfgSound3DProcessors
+class CfgDistanceFilters
+class CfgSoundGlobals
+class CfgSoundCategories
+class CfgMovesWomen: CfgMovesBasic
+class CfgArmorSimulations
+class CfgORBAT
+class CfgMovesMaleSdr_TC3: CfgMovesMaleSdr
+class CfgMovesMaleSdr_TC4: CfgMovesMaleSdr
+class CfgTimeTrials
+class CfgVRNoMipmapTextures
+class CfgVRCourses
+class CfgRadio
+class CfgGroundSupportRequestTypes
+class CfgMarkNoMipmapTextures
+class CfgRevive
+class CfgHvtObjectives
+class CfgRoles
+class CfgArgoNoMipmapTextures
+class CfgLeaflets
+class CfgTacopsNoMipmapTextures
+class CfgWLRequisitionPresets
