@@ -93,16 +93,16 @@ class UnderBarrelSlot;
 
 class CfgWeapons
 {
-	//Soldner M7
+	//Soldner BR
 	class OPTRE_M7;	
-	class Stryker_Soldner_M7 : OPTRE_M7
+	class Stryker_Soldner_BR : OPTRE_M7
 	{
 		dlc = "Project Harvest Armory"
 		author = "Soldner";
 		baseWeapon = "Stryker_Soldner_M7";
 		scope = 2;
 		scopearsenal = 2;
-		displayName = "Soldner's M7X Caseless SMG";
+		displayName = "Soldner's BR";
 		canShootInWater = 1;
 		magazineWell[] += {"MEU_smg_uw"};
 		magazines[] = {"OPTRE_60Rnd_5x23mm_Mag_JHP","OPTRE_60Rnd_5x23mm_Mag_NARQ"};
@@ -113,7 +113,7 @@ class CfgWeapons
 			mass = 30;
 			class MuzzleSlot: MuzzleSlot
 			{
-				compatibleitems[] = {"optre_m7_silencer"};
+				compatibleitems[] = {"OPTRE_MA5Suppressor"};
 			};
 			class CowsSlot: CowsSlot
 			{

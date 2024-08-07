@@ -29,12 +29,4 @@ class CfgMusicClasses
 	{
 		displayName = "Stryker - Music Pack";
 	};
-	class StrykerClip
-	{
-		displayName = "Stryker - Short Audio Clips";
-	};
-	class StrykerGoofy
-	{
-		displayName = "Stryker - Goofy";
-	};
 };
