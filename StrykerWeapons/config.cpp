@@ -7,7 +7,7 @@ class CfgPatches
 		author = "Soldner";
 		hideName = 0;
 		units[] = {};
-		weapons[] = {};
+		weapons[] = { "Stryker_Soldner_BR55","Stryker_Sabbath_M392_DMR","Stryker_Ishra_M90A"};
 		magazines[]=
 		{
 			"Stryker_200Rnd_95x40_Box_JHP",
@@ -54,14 +54,18 @@ class XtdGearModels
 			{
 				alwaysSelectable = 1;
 				label = "Owner";
-				values[] = {"SoldnerM7","SabbathM392"};
-				class SoldnerM7
+				values[] = {"Soldner","Sabbath","Ishra"};
+				class Soldner
 				{
 					label = "Soldner";
 				};
-				class SabbathM392
+				class Sabbath
 				{
 					label = "Sabbath";
+				};
+				class Ishra
+				{
+					label = "Ishra";
 				};
 			};
 		};
@@ -71,15 +75,20 @@ class XtdGearInfos
 {
 	class CfgWeapons
 	{
-		class Stryker_Soldner_M7
+		class Stryker_Soldner_BR55
 		{
 			model = "Stryker_personal_weapons";
-			type = "SoldnerM7";
+			type = "Soldner";
 		};
 		class Stryker_Sabbath_M392_DMR
 		{
 			model = "Stryker_personal_weapons";
-			type = "SabbathM392";
+			type = "Sabbath";
+		};
+		class Stryker_Ishra_M90A
+		{
+			model = "Stryker_personal_weapons";
+			type = "Ishra";
 		};
 	};
 };
@@ -90,38 +99,43 @@ class MuzzleSlot;
 class CowsSlot;
 class PointerSlot;
 class UnderBarrelSlot;
+class UnderBarrelSlot_rail;
 
 class CfgWeapons
 {
-	//Soldner BR
-	class OPTRE_M7;	
-	class Stryker_Soldner_BR : OPTRE_M7
+	//Soldner BR55
+	class OPTRE_BR55;
+	class Stryker_Soldner_BR55 : OPTRE_BR55
 	{
-		dlc = "Project Harvest Armory"
+		dlc = "Stryker Aux Mod";
 		author = "Soldner";
-		baseWeapon = "Stryker_Soldner_M7";
+		baseWeapon = "Stryker_Soldner_BR55";
+		displayName = "[Stryker] Soldner's BR55";
 		scope = 2;
 		scopearsenal = 2;
-		displayName = "Soldner's BR";
 		canShootInWater = 1;
-		magazineWell[] += {"MEU_smg_uw"};
-		magazines[] = {"OPTRE_60Rnd_5x23mm_Mag_JHP","OPTRE_60Rnd_5x23mm_Mag_NARQ"};
-		hiddenSelections[] = {"camo","camo1"};
-		hiddenSelectionsTextures[] = {"StrykerWeapons\data\Soldner_m7_co.paa","StrykerWeapons\data\Soldner_magazine_co.paa"};
-		class WeaponSlotsInfo: WeaponSlotsInfo
+		magazineWell[] += {"MEU_rifle_uw"};
+		magazines[] = { "OPTRE_36Rnd_95x40_Mag","OPTRE_36Rnd_95x40_Mag_Tracer","OPTRE_36Rnd_95x40_Mag_Tracer_Yellow","OPTRE_36Rnd_95x40_Mag_JHP","OPTRE_36Rnd_95x40_Mag_JHPT","OPTRE_36Rnd_95x40_Mag_HPSAP","OPTRE_36Rnd_95x40_Mag_HPSAPT","OPTRE_36Rnd_95x40_Mag_SS" };
+		hiddenSelections[] = { "camo1","camo2" };
+		hiddenSelectionsTextures[] = { "StrykerWeapons\data\Soldner_br55_1_co.paa","StrykerWeapons\data\Soldner_br55_2_co.paa" };
+		hiddenSelectionsTextures[] = { "\1st_meu_weapons\_textures\br45\MEU\br45_co.paa","\1st_meu_weapons\_textures\br45\MEU\BR45decals_ca.paa" };
+		class WeaponSlotsInfo : WeaponSlotsInfo
 		{
-			mass = 30;
-			class MuzzleSlot: MuzzleSlot
+			class CowsSlot : CowsSlot
 			{
-				compatibleitems[] = {"OPTRE_MA5Suppressor"};
+				compatibleitems[] = { "MEU_REC_HOLO_MEU","MEU_REC_HOLO" };
 			};
-			class CowsSlot: CowsSlot
+			class MuzzleSlot : MuzzleSlot
 			{
-				compatibleitems[] = {"MEU_REC_HOLO","OPTRE_M7_Sight"};
+				compatibleitems[] = {"optre_ma5suppressor"};
 			};
-			class PointerSlot: PointerSlot
+			class PointerSlot : PointerSlot
 			{
-				compatibleitems[] = {"OPTRE_M7_Flashlight","OPTRE_M7_Laser","ace_acc_pointer_green","MEU_M7_Vis_Laser"};
+				compatibleitems[] = { "OPTRE_BMR_Laser","optre_m45_flashlight"};
+			};
+			class UnderBarrelSlot_rail : UnderBarrelSlot_rail
+			{
+				compatibleitems[] = {"OPTRE_BR45Grip"};
 			};
 		};
 	};
@@ -130,7 +144,7 @@ class CfgWeapons
 	class OPTRE_M392_DMR;
 	class Stryker_Sabbath_M392_DMR : OPTRE_M392_DMR
 	{
-		dlc = "Project Harvest Armory"
+		dlc = "Stryker Aux Mod";
 		author = "Soldner";
 		baseWeapon = "Stryker_Sabbath_M392_DMR";
 		scope = 2;
@@ -160,6 +174,35 @@ class CfgWeapons
 				compatibleitems[] = {};
 			};
 		};
+	};
+	//Ishra's M90
+	class OPTRE_M90A;
+	class Stryker_Ishra_M90A : OPTRE_M90A
+	{
+		dlc = "OPTRE";
+		author = "Article 2 Studios";
+		displayName = "M90A CAWS Shotgun";
+		baseWeapon = "Stryker_Ishra_M90A";
+		canShootInWater = 1;
+		magazines[] = { "Meu_6Rnd_8Gauge_Super_Incendiary" };
+		magazineWell[] = { "MEU_shotgun_uw","MEU_Shotgun_Mags" };
+		class WeaponSlotsInfo : WeaponSlotsInfo
+		{
+			class MuzzleSlot : MuzzleSlot
+			{
+				compatibleitems[] = { "muzzle_snds_h_mg_blk_f","muzzle_snds_l","optre_ma5suppressor","optre_m7_silencer","optre_m6_silencer","ace_muzzle_mzls_b","muzzle_snds_b","OPTRE_MA37KSuppressor","muzzle_snds_65_TI_blk_F","OPTRE_srs99d_suppressor","OPTRE_srs99d_suppressor" };
+			};
+			class CowsSlot : CowsSlot
+			{
+				compatibleitems[] = {};
+			};
+			class PointerSlot : PointerSlot
+			{
+				compatibleitems[] = { "OPTRE_M7_Flashlight","OPTRE_M7_Laser","OPTRE_M7_Vis_Red_Laser","OPTRE_BMR_Laser","OPTRE_BMR_MEQ_Flashlight","OPTRE_BMR_Vis_Red_Laser","optre_m12_laser","OPTRE_M12_Vis_Red_Laser","OPTRE_M12_Flashlight","optre_m45_flashlight","optre_m45_flashlight_red","OPTRE_M6C_Laser","OPTRE_M6C_Vis_Red_Laser","OPTRE_M6C_Flashlight","OPTRE_M6G_Laser","OPTRE_M6G_Vis_Red_Laser","OPTRE_M6G_Flashlight","acc_pointer_ir","acc_flashlight","ace_acc_pointer_green","acc_pointer_vis_red","MEU_M12_Vis_Laser","MEU_BMR_Vis_Laser","MEU_M7_Vis_Laser","MEU_M6G_Laser" };
+			};
+		};
+		hiddenSelections[] = { "camo","camo_reticle" };
+		hiddenSelectionsTextures[] = { "StrykerWeapons\data\Ishra_m90_co.paa","#(argb,8,8,3)color(0.945098,0.215686,0.215686,1.0,co)"};
 	};
 };
 

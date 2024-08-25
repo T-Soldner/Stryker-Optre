@@ -40,38 +40,20 @@ class CfgAddons
 };
 class CfgEditorCategories
 {
-	class Stryker_EdCat_Gladius
+	class Stryker_EdCat_MEU
 	{
-		displayName = "Gladius Company";
+		displayName = "Stryker MEU";
 	};
 };
 class CfgEditorSubcategories
 {
-	class Stryker_EdSubCat_ODSTs
+	class StrykerMEU_EdSubCat_Men
 	{
-		displayName = "ODSTs";
+		displayName = "Infantry";
 	};
-	class Stryker_EdSubCat_Water
+	class Stryker_EdSubCat_Drones
 	{
-		displayName = "Boats";
-	};
-	class Stryker_EdSubCat_Cars
-	{
-		displayName = "Cars";
-	};
-	class Stryker_EdSubCat_Tanks
-	{
-		displayName = "Tanks";
-	};
-};
-class cfgFactionClasses
-{
-	class Stryker_Faction
-	{
-		displayName = "Stryker";
-		priority = 3;
-		side = 1;
-		icon = "";
+		displayName = "Drones";
 	};
 };
 class RscPicture{};
