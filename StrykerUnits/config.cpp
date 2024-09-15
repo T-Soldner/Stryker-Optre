@@ -475,10 +475,10 @@ class CfgVehicles {
 
 		identityTypes[] = { "Head_NATO","LanguageENG_F","G_NATO_default" };
 
-		uniformClass = "Stryker_U_Woodland_RTO_uniform";
+		uniformClass = "Stryker_U_Woodland_uniform";
 
-		linkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_RTO_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-		respawnlinkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_RTO_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
+		linkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
+		respawnlinkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
 
 		weapons[] = { "OPTRE_MA37","OPTRE_M6G","OPTRE_Binoculars" };
 		respawnWeapons[] = { "OPTRE_MA37","OPTRE_M6G","OPTRE_Binoculars" };
@@ -488,7 +488,7 @@ class CfgVehicles {
 
 		backpack = "Halo_LR";
 
-		ALiVE_orbatCreator_loadout[] = { {"OPTRE_MA37","","","OPTRE_MA37_Smartlink_Scope",{"OPTRE_32Rnd_762x51_Mag",32},{},""},{},{"OPTRE_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"OPTRE_8Rnd_127x40_Mag",8},{},""},{"Stryker_U_Woodland_RTO_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_M2_Smoke",4,1},{"OPTRE_M9_Frag",2,1}}},{"MA_TGE_InvisVest",{{"TCF_32Rnd_762x51_Mag_JHP",10,32},{"TCF_12Rnd_127x40_Mag_JHP",2,12}}},{"Halo_LR",{}},"Stryker_Woodland_RTO_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
+		ALiVE_orbatCreator_loadout[] = { {"OPTRE_MA37","","","OPTRE_MA37_Smartlink_Scope",{"OPTRE_32Rnd_762x51_Mag",32},{},""},{},{"OPTRE_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"OPTRE_8Rnd_127x40_Mag",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_M2_Smoke",4,1},{"OPTRE_M9_Frag",2,1}}},{"MA_TGE_InvisVest",{{"TCF_32Rnd_762x51_Mag_JHP",10,32},{"TCF_12Rnd_127x40_Mag_JHP",2,12}}},{"Halo_LR",{}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
 
 
 		class EventHandlers : EventHandlers {

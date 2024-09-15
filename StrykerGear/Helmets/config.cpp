@@ -23,6 +23,10 @@ class XtdGearModels
 				alwaysSelectable = 1;
 				label = "Camo";
 				values[] = {"urban","arid","woodland"};
+				class woodland
+				{
+					label = "Woodland";
+				};
 				class urban
 				{
 					label = "Urban";
@@ -31,23 +35,15 @@ class XtdGearModels
 				{
 					label = "Arid";
 				};
-				class woodland
-				{
-					label = "Woodland";
-				};
 			};
 			class role
 			{
 				alwaysSelectable = 1;
 				label = "Role";
-				values[] = {"base","rto","corpsman"};
+				values[] = {"base","corpsman"};
 				class base
 				{
 					label = "Base";
-				};
-				class rto
-				{
-					label = "RTO";
 				};
 				class corpsman
 				{
@@ -59,6 +55,54 @@ class XtdGearModels
 				alwaysSelectable = 1;
 				label = "Visor";
 				values[] = {"no","yes"};
+				class no
+				{
+					label = "No";
+				};
+				class yes
+				{
+					label = "Yes";
+				};
+			};
+		};
+		class Stryker_Custom_Helmets
+		{
+			label = "Stryker Custom Helmets";
+			author = "Soldner";
+			options[] = { "camo","owner","visor" };
+			class camo
+			{
+				alwaysSelectable = 1;
+				label = "Camo";
+				values[] = { "urban","arid","woodland" };
+				class woodland
+				{
+					label = "Woodland";
+				};
+				class urban
+				{
+					label = "Urban";
+				};
+				class arid
+				{
+					label = "Arid";
+				};
+			};
+			class owner
+			{
+				alwaysSelectable = 1;
+				label = "Owner";
+				values[] = { "Soldner" };
+				class Soldner
+				{
+					label = "Soldner";
+				};
+			};
+			class visor
+			{
+				alwaysSelectable = 1;
+				label = "Visor";
+				values[] = { "no","yes" };
 				class no
 				{
 					label = "No";
@@ -103,20 +147,6 @@ class XtdGearInfos
 			role = "corpsman";
 			visor = "yes";
 		};
-		class Stryker_Woodland_RTO_NV_Helmet
-		{
-			model = "Stryker_Helmets";
-			camo = "woodland";
-			role = "rto";
-			visor = "no";
-		};
-		class Stryker_Woodland_RTO_Helmet
-		{
-			model = "Stryker_Helmets";
-			camo = "woodland";
-			role = "rto";
-			visor = "yes";
-		};
 		class Stryker_Urban_NV_Helmet
 		{
 			model = "Stryker_Helmets";
@@ -143,20 +173,6 @@ class XtdGearInfos
 			model = "Stryker_Helmets";
 			camo = "urban";
 			role = "corpsman";
-			visor = "yes";
-		};
-		class Stryker_Urban_RTO_NV_Helmet
-		{
-			model = "Stryker_Helmets";
-			camo = "urban";
-			role = "rto";
-			visor = "no";
-		};
-		class Stryker_Urban_RTO_Helmet
-		{
-			model = "Stryker_Helmets";
-			camo = "urban";
-			role = "rto";
 			visor = "yes";
 		};
 		class Stryker_Arid_NV_Helmet
@@ -187,18 +203,47 @@ class XtdGearInfos
 			role = "corpsman";
 			visor = "yes";
 		};
-		class Stryker_Arid_RTO_NV_Helmet
+		//Customs
+		class Soldner_Woodland_NV_Helmet
 		{
-			model = "Stryker_Helmets";
-			camo = "arid";
-			role = "rto";
+			model = "Stryker_Custom_Helmets";
+			camo = "woodland";
+			owner = "Soldner";
 			visor = "no";
 		};
-		class Stryker_Arid_RTO_Helmet
+		class Soldner_Woodland_Helmet
 		{
-			model = "Stryker_Helmets";
+			model = "Stryker_Custom_Helmets";
+			camo = "woodland";
+			owner = "Soldner";
+			visor = "yes";
+		};
+		class Soldner_Urban_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "urban";
+			owner = "Soldner";
+			visor = "no";
+		};
+		class Soldner_Urban_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "urban";
+			owner = "Soldner";
+			visor = "yes";
+		};
+		class Soldner_Arid_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
 			camo = "arid";
-			role = "rto";
+			owner = "Soldner";
+			visor = "no";
+		};
+		class Soldner_Arid_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "arid";
+			owner = "Soldner";
 			visor = "yes";
 		};
 	};
@@ -207,177 +252,148 @@ class cfgWeapons
 {
 	class HaloInf_Marine_WDL_NV_headgear;
 	class HaloInf_Marine_WDL_headgear;
-	class Stryker_Woodland_NV_Helmet: HaloInf_Marine_WDL_NV_headgear
+	class Stryker_Base_helmet : HaloInf_Marine_WDL_headgear {
+		author = "Soldner";
+		scope = 1;
+		displayName = "[Stryker] Base";
+		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
+		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
+	};
+	class Stryker_Base_NV_helmet : HaloInf_Marine_WDL_NV_headgear {
+		author = "Soldner";
+		scope = 1;
+		displayName = "[Stryker] Base (NV)";
+		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
+		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
+	};
+	class Stryker_Woodland_NV_Helmet: Stryker_Base_NV_helmet
 	{
 		scope = 2;
 		displayName = "[Stryker] UNSC Woodland CH252 (NV)";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
 		hiddenSelections[] = {"Camo1"};
-		hiddenSelectionsTextures[] = {"Halo_marine_02\helmet\textures\Halo_marine_02_Helmet_green_unsc_co.paa"};
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Helmet.paa" };
 	};
-	class Stryker_Woodland_Helmet: HaloInf_Marine_WDL_headgear
+	class Stryker_Woodland_Helmet: Stryker_Base_helmet
 	{
 		scope = 2;
 		displayName = "[Stryker] UNSC Woodland CH252";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
 		hiddenSelections[] = {"Camo1"};
-		hiddenSelectionsTextures[] = {"Halo_marine_02\helmet\textures\Halo_marine_02_Helmet_green_unsc_co.paa"};
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Helmet.paa" };
 	};
-	class Stryker_Woodland_Corpsman_NV_Helmet: HaloInf_Marine_WDL_NV_headgear
+	class Stryker_Woodland_Corpsman_NV_Helmet: Stryker_Base_NV_helmet
 	{
 		scope = 2;
 		displayName = "[Stryker] UNSC Woodland CH252 (Corpsman/NV)";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
 		hiddenSelections[] = {"Camo1","_Visor"};
-		hiddenSelectionsTextures[] = {"Halo_marine_02\helmet\textures\Halo_marine_02_Helmet_green_unscM_co.paa"};
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Corpsman_Helmet.paa" };
 	};
-	class Stryker_Woodland_Corpsman_Helmet: HaloInf_Marine_WDL_headgear
+	class Stryker_Woodland_Corpsman_Helmet: Stryker_Base_helmet
 	{
 		scope = 2;
 		displayName = "[Stryker] UNSC Woodland CH252 (Corpsman)";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
 		hiddenSelections[] = {"Camo1"};
-		hiddenSelectionsTextures[] = {"Halo_marine_02\helmet\textures\Halo_marine_02_Helmet_green_unscM_co.paa"};
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Corpsman_Helmet.paa" };
 	};
-	class Stryker_Woodland_RTO_NV_Helmet: HaloInf_Marine_WDL_NV_headgear
+	class Stryker_Urban_NV_Helmet: Stryker_Base_NV_helmet
 	{
-		scope = 2;
-		displayName = "[Stryker] UNSC Woodland CH252 (RTO/NV)";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
-		hiddenSelections[] = {"Camo1","_Visor"};
-		hiddenSelectionsTextures[] = {"Halo_marine_02\helmet\textures\Halo_marine_02_Helmet_green_unscR_co.paa"};
-	};
-	class Stryker_Woodland_RTO_Helmet: HaloInf_Marine_WDL_headgear
-	{
-		scope = 2;
-		displayName = "[Stryker] UNSC Woodland CH252 (RTO)";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
-		hiddenSelections[] = {"Camo1"};
-		hiddenSelectionsTextures[] = {"Halo_marine_02\helmet\textures\Halo_marine_02_Helmet_green_unscR_co.paa"};
-	};
-	class Stryker_Urban_NV_Helmet: HaloInf_Marine_WDL_NV_headgear
-	{
-		author = "Soldner";
 		scope = 2;
 		displayName = "[Stryker] UNSC Urban CH252 (NV)";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
 		hiddenSelections[] = {"Camo1"};
 		hiddenSelectionsTextures[] = {"\StrykerGear\Data\Stryker_Urban_Helmet.paa"};
 	};
-	class Stryker_Urban_Helmet: HaloInf_Marine_WDL_headgear
+	class Stryker_Urban_Helmet: Stryker_Base_helmet
 	{
-		author = "Soldner";
 		scope = 2;
 		displayName = "[Stryker] UNSC Urban CH252";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
 		hiddenSelections[] = {"Camo1"};
 		hiddenSelectionsTextures[] = {"\StrykerGear\Data\Stryker_Urban_Helmet.paa"};
 	};
-	class Stryker_Urban_Corpsman_NV_Helmet: HaloInf_Marine_WDL_NV_headgear
+	class Stryker_Urban_Corpsman_NV_Helmet: Stryker_Base_NV_helmet
 	{
-		author = "Soldner";
 		scope = 2;
 		displayName = "[Stryker] UNSC Urban CH252 (Corpsman/NV)";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
 		hiddenSelections[] = {"Camo1","_Visor"};
 		hiddenSelectionsTextures[] = {"\StrykerGear\Data\Stryker_Urban_Corpsman_Helmet.paa"};
 	};
-	class Stryker_Urban_Corpsman_Helmet: HaloInf_Marine_WDL_headgear
+	class Stryker_Urban_Corpsman_Helmet: Stryker_Base_helmet
 	{
-		author = "Soldner";
 		scope = 2;
 		displayName = "[Stryker] UNSC Urban CH252 (Corpsman)";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
 		hiddenSelections[] = {"Camo1"};
 		hiddenSelectionsTextures[] = {"\StrykerGear\Data\Stryker_Urban_Corpsman_Helmet.paa"};
 	};
-	class Stryker_Urban_RTO_NV_Helmet: HaloInf_Marine_WDL_NV_headgear
-	{
-		author = "Soldner";
-		scope = 2;
-		displayName = "[Stryker] UNSC Urban CH252 (RTO/NV)";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
-		hiddenSelections[] = {"Camo1","_Visor"};
-		hiddenSelectionsTextures[] = {"\StrykerGear\Data\Stryker_Urban_RTO_Helmet.paa"};
-	};
-	class Stryker_Urban_RTO_Helmet: HaloInf_Marine_WDL_headgear
-	{
-		author = "Soldner";
-		scope = 2;
-		displayName = "[Stryker] UNSC Urban CH252 (RTO)";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
-		hiddenSelections[] = {"Camo1"};
-		hiddenSelectionsTextures[] = {"\StrykerGear\Data\Stryker_Urban_RTO_Helmet.paa"};
-	};
-	class Stryker_Arid_NV_Helmet: HaloInf_Marine_WDL_NV_headgear
+	class Stryker_Arid_NV_Helmet: Stryker_Base_NV_helmet
 	{
 		scope = 2;
 		displayName = "[Stryker] UNSC Arid CH252 (NV)";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
 		hiddenSelections[] = {"Camo1"};
-		hiddenSelectionsTextures[] = {"Halo_marine_02\helmet\textures\Halo_marine_02_Helmet_tan_co.paa"};
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Helmet.paa" };
 	};
-	class Stryker_Arid_Helmet: HaloInf_Marine_WDL_headgear
+	class Stryker_Arid_Helmet: Stryker_Base_helmet
 	{
 		scope = 2;
 		displayName = "[Stryker] UNSC Arid CH252";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
 		hiddenSelections[] = {"Camo1"};
-		hiddenSelectionsTextures[] = {"Halo_marine_02\helmet\textures\Halo_marine_02_Helmet_tan_co.paa"};
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Helmet.paa" };
 	};
-	class Stryker_Arid_Corpsman_NV_Helmet: HaloInf_Marine_WDL_NV_headgear
+	class Stryker_Arid_Corpsman_NV_Helmet: Stryker_Base_NV_helmet
 	{
 		scope = 2;
 		displayName = "[Stryker] UNSC Arid CH252 (Corpsman/NV)";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
 		hiddenSelections[] = {"Camo1","_Visor"};
-		hiddenSelectionsTextures[] = {"Halo_marine_02\helmet\textures\Halo_marine_02_Helmet_tan_unscM_co.paa"};
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Corpsman_Helmet.paa" };
 	};
-	class Stryker_Arid_Corpsman_Helmet: HaloInf_Marine_WDL_headgear
+	class Stryker_Arid_Corpsman_Helmet: Stryker_Base_helmet
 	{
 		scope = 2;
 		displayName = "[Stryker] UNSC Arid CH252 (Corpsman)";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
 		hiddenSelections[] = {"Camo1"};
-		hiddenSelectionsTextures[] = {"Halo_marine_02\helmet\textures\Halo_marine_02_Helmet_tan_unscM_co.paa"};
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Corpsman_Helmet.paa" };
 	};
-	class Stryker_Arid_RTO_NV_Helmet: HaloInf_Marine_WDL_NV_headgear
+
+	//Custom Helmets
+	class Soldner_Woodland_NV_Helmet : Stryker_Base_NV_helmet
 	{
 		scope = 2;
-		displayName = "[Stryker] UNSC Arid CH252 (RTO/NV)";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
-		hiddenSelections[] = {"Camo1","_Visor"};
-		hiddenSelectionsTextures[] = {"Halo_marine_02\helmet\textures\Halo_marine_02_Helmet_tan_unscR_co.paa"};
+		displayName = "[Stryker] UNSC Woodland CH252 (Soldner/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Soldner_Woodland_Helmet.paa" };
 	};
-	class Stryker_Arid_RTO_Helmet: HaloInf_Marine_WDL_headgear
+	class Soldner_Woodland_Helmet : Stryker_Base_helmet
 	{
 		scope = 2;
-		displayName = "[Stryker] UNSC Arid CH252 (RTO)";
-		picture = "\A3\characters_f\Data\UI\icon_H_Cap_blk_CA.paa";
-		model = "\Halo_marine_02\Halo_Marine_02_Helmet_F.p3d";
-		hiddenSelections[] = {"Camo1"};
-		hiddenSelectionsTextures[] = {"Halo_marine_02\helmet\textures\Halo_marine_02_Helmet_tan_unscR_co.paa"};
+		displayName = "[Stryker] UNSC Woodland CH252 (Soldner)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Soldner_Woodland_Helmet.paa" };
 	};
-};
-class cfgMods
-{
-	author = "Soldner";
-	timepacked = "1702303137";
+	class Soldner_Urban_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		author = "Soldner";
+		scope = 2;
+		displayName = "[Stryker] UNSC Urban CH252 (Soldner/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Soldner_Urban_Helmet.paa" };
+	};
+	class Soldner_Urban_Helmet : Stryker_Base_helmet
+	{
+		author = "Soldner";
+		scope = 2;
+		displayName = "[Stryker] UNSC Urban CH252 (Soldner)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Soldner_Urban_Helmet.paa" };
+	};
+	class Soldner_Arid_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Arid CH252 (Soldner/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Soldner_Arid_Helmet.paa" };
+	};
+	class Soldner_Arid_Helmet : Stryker_Base_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Arid CH252 (Soldner)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Soldner_Arid_Helmet.paa" };
+	};
 };

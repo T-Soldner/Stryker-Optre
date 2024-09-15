@@ -12,6 +12,8 @@ class CfgPatches
 class CfgVehicles
 {
 	//Wombat Drone
+	class Turrets;
+	class MainTurret;
 	class OPTRE_Wombat_Base;
 	class Stryker_MEU_Wombat : OPTRE_Wombat_Base
 	{
