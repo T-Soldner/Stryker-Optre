@@ -5,7 +5,7 @@ class CfgPatches
 		author = "Soldner";
 		hideName = 0;
 		units[] = {};
-		weapons[] = { "Stryker_MA37","Stryker_MA37GL","Stryker_M247","Stryker_M392_DMR","Stryker_M90A","Stryker_BR55","Stryker_Soldner_BR55","Stryker_Oser_BR55","Stryker_Aturr_BR55","Stryker_Sabbath_M392_DMR","Stryker_Havoc_M392_DMR","Stryker_Ishra_M90A" };
+		weapons[] = {};
 		magazines[]={};
 		requiredVersion = 0.1;
 		requiredAddons[] = {};
@@ -145,15 +145,15 @@ class XtdGearInfos
 	};
 };
 
+class WeaponSlotsInfo;
+class CowsSlot;
+class MuzzleSlot;
+class PointerSlot;
+class UnderBarrelSlot;
+class UnderBarrelSlot_rail;
+
 class CfgWeapons
 {
-	class WeaponSlotsInfo;
-	class MuzzleSlot;
-	class CowsSlot;
-	class PointerSlot;
-	class UnderBarrelSlot;
-	class UnderBarrelSlot_rail;
-
 	//Optre inherits
 	class OPTRE_MA37;
 	class OPTRE_MA37GL;
@@ -170,9 +170,10 @@ class CfgWeapons
 		author = "Soldner";
 		displayName = "[Stryker] MA37 ICWS Assault Rifle";
 		baseWeapon = "Stryker_MA37";
-		magazineWell[] = { "MEU_rifle_uw","MEU_32rnd_762_51","OPTRE_Magwell_MA5C"};
-		hiddenSelections[] = { "camo","camo1"/*,"camo_reticle"*/ };
-		hiddenSelectionsTextures[] = { "StrykerWeapons\data\Stryker_ma37_co.paa","StrykerWeapons\data\Stryker_ammocounter37_co.paa"/*,"optre_weapons\ar\data\smartlink_co.paa"*/ };
+		magazineWell[] = { "MEU_rifle_uw" };
+		magazines[] = { "OPTRE_32Rnd_762x51_Mag_UW","OPTRE_32Rnd_762x51_Mag_AP","OPTRE_32Rnd_762x51_Mag_APT","OPTRE_32Rnd_762x51_Mag_JHP","OPTRE_32Rnd_762x51_Mag_JHPT"};
+		hiddenSelections[] = { "camo","camo1" };
+		hiddenSelectionsTextures[] = { "StrykerWeapons\data\Stryker_ma37_co.paa","StrykerWeapons\data\Stryker_ammocounter37_co.paa" };
 		class WeaponSlotsInfo : WeaponSlotsInfo
 		{
 			class CowsSlot : CowsSlot {
@@ -184,7 +185,7 @@ class CfgWeapons
 			class PointerSlot : PointerSlot {
 				compatibleitems[] = { "OPTRE_M7_Flashlight","OPTRE_M7_Laser","OPTRE_M7_Vis_Red_Laser","OPTRE_BMR_Laser","OPTRE_BMR_MEQ_Flashlight","OPTRE_BMR_Vis_Red_Laser","optre_m12_laser","OPTRE_M12_Vis_Red_Laser","OPTRE_M12_Flashlight","optre_m45_flashlight","optre_m45_flashlight_red","OPTRE_M6C_Laser","OPTRE_M6C_Vis_Red_Laser","OPTRE_M6C_Flashlight","OPTRE_M6G_Laser","OPTRE_M6G_Vis_Red_Laser","OPTRE_M6G_Flashlight","acc_pointer_ir","acc_flashlight","ace_acc_pointer_green","acc_pointer_vis_red","MEU_M12_Vis_Laser","MEU_BMR_Vis_Laser","MEU_M7_Vis_Laser","MEU_M6G_Laser" };
 			};
-			class UnderBarrelSlot : UnderBarrelSlot_rail {
+			class UnderBarrelSlot_rail : UnderBarrelSlot_rail {
 				compatibleitems[] = {};
 			};
 		};
@@ -197,6 +198,8 @@ class CfgWeapons
 		author = "Soldner";
 		displayName = "[Stryker] MA37 + M301 GL Assault Rifle";
 		baseWeapon = "Stryker_MA37GL";
+		magazineWell[] = { "MEU_rifle_uw" };
+		magazines[] = { "OPTRE_32Rnd_762x51_Mag_UW","OPTRE_32Rnd_762x51_Mag_AP","OPTRE_32Rnd_762x51_Mag_APT","OPTRE_32Rnd_762x51_Mag_JHP","OPTRE_32Rnd_762x51_Mag_JHPT" };
 		hiddenSelections[] = { "camo","camo1"/*,"camo2","camo3","camo_reticle"*/ };
 		hiddenSelectionsTextures[] = { "StrykerWeapons\data\Stryker_ma37_co.paa","StrykerWeapons\data\Stryker_ammocounter37_co.paa"/*,"optre_weapons\ar\data\smartlink_co.paa","optre_weapons\ar\data\cover_co.paa","optre_weapons\ar\data\r_ar_ca.paa"*/ };
 		class WeaponSlotsInfo : WeaponSlotsInfo
@@ -226,11 +229,30 @@ class CfgWeapons
 		scope = 2;
 		scopeArsenal = 2;
 		displayName = "[Stryker] M247 General Purpose Machine Gun";
-		magazines[] = { "OPTRE_100Rnd_762x51_Box" };
-		magazineWell[] = { "OPTRE_Magwell_M247" };
+		magazines[] = { "MEU_100Rnd_762x51_AP_HV_Box","MEU_400Rnd_762x51_AP_HV_Box"};
+		magazineWell[] = { "MEU_rifle_uw" };
 		baseWeapon = "OPTRE_M247";
-		hiddenSelections[] = { "mainbody1","mainbody2"/*,"magazine"*/,"stock"/*,"details","barrel_sights"*/ };
-		hiddenSelectionsTextures[] = { "StrykerWeapons\data\Stryker_M247_mainbody1_CO.paa","StrykerWeapons\data\Stryker_M247_mainbody2_CO.paa"/*,"\OPTRE_Weapons\MG\data\M247_magazine_CO.paa"*/,"StrykerWeapons\data\Stryker_M247_stock_CO.paa"/*,"\OPTRE_Weapons\MG\data\M247_details_CO.paa","\OPTRE_Weapons\MG\data\M247_barrel_sights_CO.paa"*/ };
+		hiddenSelections[] = { "mainbody1","mainbody2","stock" };
+		hiddenSelectionsTextures[] = { "StrykerWeapons\data\Stryker_M247_mainbody1_CO.paa","StrykerWeapons\data\Stryker_M247_mainbody2_CO.paa","StrykerWeapons\data\Stryker_M247_stock_CO.paa" };
+		class WeaponSlotsInfo : WeaponSlotsInfo
+		{
+			class MuzzleSlot : MuzzleSlot
+			{
+				compatibleitems[] = { "MEU_OPTRE_M250_Suppressor" };
+			};
+			class CowsSlot : CowsSlot
+			{
+				compatibleitems[] = { "MEU_REC_HOLO","MEU_REC_HOLO_Red","MEU_REC_HOLO_Gre","MEU_REC_HOLO_Desert","MEU_REC_HOLO_UNSC","MEU_REC_HOLO_Snow","MEU_REC_HOLO_MEU","MEU_Evo_Sight","MEU_Evo_Sight_Riser","optic_Yorris","optic_DMS","optic_DMS_ghex_F","optic_ERCO_blk_F","optic_ERCO_khk_F","optic_ERCO_snd_F","optic_MRCO","optic_Arco","optic_Arco_ghex_F","optic_Arco_blk_F","optic_aco","optic_ACO_grn","optic_aco_smg","optic_ACO_grn_smg","optic_hamr","optic_Hamr_khk_F","optic_Holosight","optic_Holosight_smg","optic_Holosight_blk_F","optic_Holosight_khk_F","optic_Holosight_smg_blk_F","optic_Holosight_smg_khk_F","OPTRE_M392_Scope","OPTRE_BR55HB_Scope","OPTRE_M7_Sight","OPTRE_M393_Scope","OPTRE_M393_ACOG","OPTRE_M393_EOTECH","OPTRE_M73_SmartLink","OPTRE_MA5_SmartLink","OPTRE_MA5_SmartLink_v2","OPTRE_MA5C_SmartLink_v2","OPTRE_MA5_SmartLink_legacy","OPTRE_MA5C_SmartLink_legacy","OPTRE_M12_Optic","OPTRE_M12_Optic_Red","OPTRE_M12_Optic_Green","optic_ico_01_black_f","OPTRE_BR45_Scope","Decimator_Test_Optic","Optre_Evo_Sight","Optre_Evo_Sight_Covie","Optre_Evo_Sight_Spartan","Optre_Evo_Sight_Innie","Optre_Evo_Sight_Yellow","Optre_Evo_Sight_Riser","Optre_Evo_Sight_Riser_Covie","Optre_Evo_Sight_Riser_Spartan","Optre_Evo_Sight_Riser_Innie","Optre_Evo_Sight_Riser_Yellow","xm250_scope" };
+			};
+			class PointerSlot : PointerSlot
+			{
+				compatibleitems[] = { "OPTRE_BMR_Laser","OPTRE_BMR_MEQ_Flashlight","OPTRE_BMR_Vis_Red_Laser","optre_m45_flashlight","acc_pointer_ir","acc_flashlight" };
+			};
+			class UnderBarrelSlot : UnderBarrelSlot
+			{
+				compatibleitems[] = { "bipod_01_f_blk","bipod_02_f_blk","bipod_03_f_blk" };
+			};
+		};
 	};
 
 	//M392
@@ -239,16 +261,16 @@ class CfgWeapons
 		dlc = "Stryker Aux Mod";
 		author = "Soldner";
 		baseWeapon = "Stryker_M392_DMR";
+		displayName = "[Stryker] M392";
 		scope = 2;
 		scopearsenal = 2;
-		displayName = "[Stryker] M392";
 		canShootInWater = 1;
 		hiddenSelections[] = { "camo" };
 		hiddenSelectionsTextures[] = { "StrykerWeapons\data\Stryker_M392_CO.paa" };
-		magazines[] += {"OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_Mag_Tracer", "OPTRE_15Rnd_762x51_Mag_Tracer_Yellow", "OPTRE_15Rnd_762x51_Mag_AP", "OPTRE_15Rnd_762x51_Mag_APT", "OPTRE_15Rnd_762x51_Mag_JHP", "OPTRE_15Rnd_762x51_Mag_JHPT", "OPTRE_15Rnd_762x51_Mag_SS", "OPTRE_15Rnd_762x51_Mag_SST", "OPTRE_15Rnd_762x51_Mag_FS", "OPTRE_15Rnd_762x51_Mag_FST", "OPTRE_15Rnd_DMR_762x51_Mag_AP", "OPTRE_15Rnd_DMR_762x51_Mag_APT", "OPTRE_15Rnd_DMR_762x51_Mag_JHP", "OPTRE_15Rnd_DMR_762x51_Mag_JHPT", "OPTRE_15Rnd_DMR_762x51_Mag_SS", "OPTRE_15Rnd_DMR_762x51_Mag_SST", "OPTRE_15Rnd_DMR_762x51_Mag_FS", "OPTRE_15Rnd_DMR_762x51_Mag_FST"};
-		class WeaponSlotsInfo
+		magazines[] = { "OPTRE_15Rnd_DMR_762x51_Mag_AP", "OPTRE_15Rnd_DMR_762x51_Mag_APT", "OPTRE_15Rnd_DMR_762x51_Mag_JHP", "OPTRE_15Rnd_DMR_762x51_Mag_JHPT"};
+		magazineWell[] = { "MEU_marksmen_uw" };
+		class WeaponSlotsInfo : WeaponSlotsInfo
 		{
-			mass = 40;
 			class MuzzleSlot : MuzzleSlot
 			{
 				compatibleitems[] = { "muzzle_snds_65_TI_blk_F","OPTRE_MA5Suppressor","OPTRE_MA37KSuppressor" };
@@ -263,7 +285,7 @@ class CfgWeapons
 			};
 			class UnderBarrelSlot : UnderBarrelSlot
 			{
-				compatibleitems[] = {};
+				compatibleitems[] = { "bipod_01_F_blk","bipod_02_F_blk","bipod_03_F_blk" };
 			};
 		};
 	};
@@ -278,8 +300,8 @@ class CfgWeapons
 		canShootInWater = 1;
 		scope = 2;
 		scopearsenal = 2;
-		magazines[] = { "Meu_6Rnd_8Gauge_Super_Incendiary" };
-		magazineWell[] = { "MEU_shotgun_uw","MEU_Shotgun_Mags" };
+		magazines[] = {"OPTRE_12Rnd_8Gauge_Pellet","OPTRE_12Rnd_8Gauge_Slug","OPTRE_12Rnd_8Gauge_Beanbag","OPTRE_12Rnd_8Gauge_Incendiary" };
+		magazineWell[] = { "MEU_shotgun_uw" };
 		class WeaponSlotsInfo : WeaponSlotsInfo
 		{
 			class MuzzleSlot : MuzzleSlot
@@ -308,15 +330,15 @@ class CfgWeapons
 		scope = 2;
 		scopearsenal = 2;
 		canShootInWater = 1;
-		magazineWell[] += {"MEU_rifle_uw"};
-		magazines[] = { "OPTRE_36Rnd_95x40_Mag","OPTRE_36Rnd_95x40_Mag_Tracer","OPTRE_36Rnd_95x40_Mag_Tracer_Yellow","OPTRE_36Rnd_95x40_Mag_JHP","OPTRE_36Rnd_95x40_Mag_JHPT","OPTRE_36Rnd_95x40_Mag_HPSAP","OPTRE_36Rnd_95x40_Mag_HPSAPT","OPTRE_36Rnd_95x40_Mag_SS" };
+		magazineWell[] = {"MEU_rifle_uw"};
+		magazines[] = { "OPTRE_36Rnd_95x40_Mag_JHP","OPTRE_36Rnd_95x40_Mag_JHPT","OPTRE_36Rnd_95x40_Mag_HPSAP","OPTRE_36Rnd_95x40_Mag_HPSAPT" };
 		hiddenSelections[] = { "camo1","camo2" };
 		hiddenSelectionsTextures[] = { "StrykerWeapons\data\Stryker_br55_1_co.paa","StrykerWeapons\data\Stryker_br55_2_co.paa" };
 		class WeaponSlotsInfo : WeaponSlotsInfo
 		{
 			class CowsSlot : CowsSlot
 			{
-				//fix this
+				compatibleitems[] = { "optic_Nightstalker","optic_tws","optic_tws_mg","optic_NVS","optic_DMS","optic_LRPS","optic_ams","optic_AMS_snd","optic_AMS_khk","optic_KHS_blk","optic_KHS_tan","optic_KHS_hex","optic_KHS_old","optic_SOS","optic_MRCO","optic_Arco","optic_aco","optic_ACO_grn","optic_aco_smg","optic_ACO_grn_smg","optic_hamr","optic_Holosight","optic_Holosight_smg","optic_Hamr_khk_F","optic_SOS_khk_F","optic_Arco_ghex_F","optic_Arco_blk_F","optic_DMS_ghex_F","optic_ERCO_blk_F","optic_ERCO_khk_F","optic_ERCO_snd_F","optic_LRPS_ghex_F","optic_LRPS_tna_F","optic_Holosight_blk_F","optic_Holosight_khk_F","optic_Holosight_smg_blk_F","optic_Holosight_smg_khk_F","OPTRE_M392_Scope","OPTRE_BR55HB_Scope","OPTRE_M7_Sight","OPTRE_M12_Optic","OPTRE_M393_Scope","OPTRE_M393_ACOG","OPTRE_M393_EOTECH","OPTRE_BR45_Scope","MEU_REC_HOLO_DMR","MEU_REC_HOLO_Gre_DMR","MEU_REC_HOLO_RED_DMR" };
 			};
 			class MuzzleSlot : MuzzleSlot
 			{
@@ -339,8 +361,6 @@ class CfgWeapons
 	//Soldner BR55
 	class Stryker_Soldner_BR55 : Stryker_BR55
 	{
-		dlc = "Stryker Aux Mod";
-		author = "Soldner";
 		baseWeapon = "Stryker_Soldner_BR55";
 		displayName = "[Stryker] Soldner's BR55";
 		hiddenSelections[] = { "camo1","camo2" };
@@ -356,8 +376,6 @@ class CfgWeapons
 	//Oser BR55
 	class Stryker_Oser_BR55 : Stryker_BR55
 	{
-		dlc = "Stryker Aux Mod";
-		author = "Soldner";
 		baseWeapon = "Stryker_Oser_BR55";
 		displayName = "[Stryker] Oser's BR55";
 		hiddenSelections[] = { "camo1","camo2" };
@@ -373,8 +391,6 @@ class CfgWeapons
 	//Aturr BR55
 	class Stryker_Aturr_BR55 : Stryker_BR55
 	{
-		dlc = "Stryker Aux Mod";
-		author = "Soldner";
 		baseWeapon = "Stryker_Aturr_BR55";
 		displayName = "[Stryker] Aturr's BR55";
 		hiddenSelections[] = { "camo1","camo2" };
@@ -390,8 +406,6 @@ class CfgWeapons
 	//Sabbath M392 DMR
 	class Stryker_Sabbath_M392_DMR : Stryker_M392_DMR
 	{
-		dlc = "Stryker Aux Mod";
-		author = "Soldner";
 		baseWeapon = "Stryker_Sabbath_M392_DMR";
 		displayName = "[Stryker] Sabbath's M392";
 		hiddenSelections[] = {"camo"};
@@ -400,8 +414,6 @@ class CfgWeapons
 	//Havoc M392
 	class Stryker_Havoc_M392_DMR : Stryker_M392_DMR
 	{
-		dlc = "Stryker Aux Mod";
-		author = "Soldner";
 		baseWeapon = "Stryker_Havoc_M392_DMR";
 		displayName = "[Stryker] Havoc's M392";
 		hiddenSelections[] = { "camo" };
@@ -410,8 +422,6 @@ class CfgWeapons
 	//Ishra's M90
 	class Stryker_Ishra_M90A : Stryker_M90A
 	{
-		dlc = "Stryker Aux Mod";
-		author = "Soldner";
 		displayName = "[Stryker] Ishra's M90A";
 		baseWeapon = "Stryker_Ishra_M90A";
 		hiddenSelections[] = { "camo","camo_reticle" };
