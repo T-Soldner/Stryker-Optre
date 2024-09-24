@@ -92,10 +92,14 @@ class XtdGearModels
 			{
 				alwaysSelectable = 1;
 				label = "Owner";
-				values[] = { "Soldner" };
+				values[] = { "Soldner","Havoc"};
 				class Soldner
 				{
 					label = "Soldner";
+				};
+				class Havoc
+				{
+					label = "Havoc";
 				};
 			};
 			class visor
@@ -204,6 +208,7 @@ class XtdGearInfos
 			visor = "yes";
 		};
 		//Customs
+		//Soldner
 		class Soldner_Woodland_NV_Helmet
 		{
 			model = "Stryker_Custom_Helmets";
@@ -244,6 +249,49 @@ class XtdGearInfos
 			model = "Stryker_Custom_Helmets";
 			camo = "arid";
 			owner = "Soldner";
+			visor = "yes";
+		};
+		//Havoc
+		class Havoc_Woodland_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "woodland";
+			owner = "Havoc";
+			visor = "no";
+		};
+		class Havoc_Woodland_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "woodland";
+			owner = "Havoc";
+			visor = "yes";
+		};
+		class Havoc_Urban_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "urban";
+			owner = "Havoc";
+			visor = "no";
+		};
+		class Havoc_Urban_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "urban";
+			owner = "Havoc";
+			visor = "yes";
+		};
+		class Havoc_Arid_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "arid";
+			owner = "Havoc";
+			visor = "no";
+		};
+		class Havoc_Arid_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "arid";
+			owner = "Havoc";
 			visor = "yes";
 		};
 	};
@@ -352,6 +400,7 @@ class cfgWeapons
 	};
 
 	//Custom Helmets
+	//Soldner
 	class Soldner_Woodland_NV_Helmet : Stryker_Base_NV_helmet
 	{
 		scope = 2;
@@ -395,5 +444,51 @@ class cfgWeapons
 		displayName = "[Stryker] UNSC Arid CH252 (Soldner)";
 		hiddenSelections[] = { "Camo1" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Soldner_Arid_Helmet.paa" };
+	};
+
+	//Havoc
+	class Havoc_Woodland_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Woodland CH252 (Havoc/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Havoc_Woodland_Helmet.paa" };
+	};
+	class Havoc_Woodland_Helmet : Stryker_Base_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Woodland CH252 (Havoc)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Havoc_Woodland_Helmet.paa" };
+	};
+	class Havoc_Urban_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		author = "Havoc";
+		scope = 2;
+		displayName = "[Stryker] UNSC Urban CH252 (Havoc/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Havoc_Urban_Helmet.paa" };
+	};
+	class Havoc_Urban_Helmet : Stryker_Base_helmet
+	{
+		author = "Havoc";
+		scope = 2;
+		displayName = "[Stryker] UNSC Urban CH252 (Havoc)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Havoc_Urban_Helmet.paa" };
+	};
+	class Havoc_Arid_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Arid CH252 (Havoc/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Havoc_Arid_Helmet.paa" };
+	};
+	class Havoc_Arid_Helmet : Stryker_Base_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Arid CH252 (Havoc)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Havoc_Arid_Helmet.paa" };
 	};
 };

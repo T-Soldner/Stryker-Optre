@@ -21,10 +21,10 @@ class XtdGearModels
 			class squad {
 				alwaysSelectable = 1;
 				label = "Squad";
-				values[] = { "base","oneOne","oneTwo","oneThree" };
-				class base
+				values[] = {"oneA","oneOne","oneTwo","oneThree","base"};
+				class oneA
 				{
-					label = "Base";
+					label = "1-A";
 				};
 				class oneOne
 				{
@@ -37,6 +37,10 @@ class XtdGearModels
 				class oneThree
 				{
 					label = "1-3";
+				};
+				class base
+				{
+					label = "Unassigned";
 				};
 			};
 			class camo
@@ -99,10 +103,14 @@ class XtdGearModels
 			{
 				alwaysSelectable = 1;
 				label = "Owner";
-				values[] = { "Soldner" };
+				values[] = { "Soldner","Havoc"};
 				class Soldner
 				{
 					label = "Soldner";
+				};
+				class Havoc
+				{
+					label = "Havoc";
 				};
 			};
 		};
@@ -151,6 +159,48 @@ class XtdGearInfos
 		{
 			model = "Stryker_Uniforms";
 			squad = "base";
+			camo = "arid";
+			role = "corpsman";
+		};
+		class Stryker_U_oneA_Woodland_uniform
+		{
+			model = "Stryker_Uniforms";
+			squad = "oneA";
+			camo = "woodland";
+			role = "base";
+		};
+		class Stryker_U_oneA_Woodland_Corpsman_uniform
+		{
+			model = "Stryker_Uniforms";
+			squad = "oneA";
+			camo = "woodland";
+			role = "corpsman";
+		};
+		class Stryker_U_oneA_Urban_uniform
+		{
+			model = "Stryker_Uniforms";
+			squad = "oneA";
+			camo = "urban";
+			role = "base";
+		};
+		class Stryker_U_oneA_Urban_Corpsman_uniform
+		{
+			model = "Stryker_Uniforms";
+			squad = "oneA";
+			camo = "urban";
+			role = "corpsman";
+		};
+		class Stryker_U_oneA_Arid_uniform
+		{
+			model = "Stryker_Uniforms";
+			squad = "oneA";
+			camo = "arid";
+			role = "base";
+		};
+		class Stryker_U_oneA_Arid_Corpsman_uniform
+		{
+			model = "Stryker_Uniforms";
+			squad = "oneA";
 			camo = "arid";
 			role = "corpsman";
 		};
@@ -282,6 +332,7 @@ class XtdGearInfos
 		};
 
 		//custom uniform/armor
+		//Soldner
 		class Stryker_U_Soldner_Woodland_uniform
 		{
 			model = "Stryker_Custom_Uniforms";
@@ -299,6 +350,26 @@ class XtdGearInfos
 			model = "Stryker_Custom_Uniforms";
 			camo = "arid";
 			owner = "Soldner";
+		};
+
+		//Havoc
+		class Stryker_U_Havoc_Woodland_uniform
+		{
+			model = "Stryker_Custom_Uniforms";
+			camo = "woodland";
+			owner = "Havoc";
+		};
+		class Stryker_U_Havoc_Urban_uniform
+		{
+			model = "Stryker_Custom_Uniforms";
+			camo = "urban";
+			owner = "Havoc";
+		};
+		class Stryker_U_Havoc_Arid_uniform
+		{
+			model = "Stryker_Custom_Uniforms";
+			camo = "arid";
+			owner = "Havoc";
 		};
 	};
 };
@@ -377,6 +448,68 @@ class CfgVehicles
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_Armor.paa" };
 		uniformClass = "Stryker_U_Arid_Corpsman_uniform";
+	};
+	
+	//One-A
+	class Stryker_oneA_Woodland : Stryker_Base
+	{
+		scope = 2;
+		scopearsenal = 2;
+		scopecurator = 2;
+		displayName = "[Stryker] 1-A Woodland";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Stryker_Woodland_oneA_Armor.paa" };
+		uniformClass = "Stryker_U_oneA_Woodland_uniform";
+	};
+	class Stryker_oneA_Corpsman_Woodland : Stryker_Base
+	{
+		scope = 2;
+		scopearsenal = 2;
+		scopecurator = 2;
+		displayName = "[Stryker] 1-A Woodland Corpsman";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Stryker_Woodland_oneA_Armor.paa" };
+		uniformClass = "Stryker_U_oneA_Woodland_Corpsman_uniform";
+	};
+	class Stryker_oneA_Urban : Stryker_Base
+	{
+		scope = 2;
+		scopearsenal = 2;
+		scopecurator = 2;
+		displayName = "[Stryker] 1-A Urban";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Stryker_Urban_oneA_Armor.paa" };
+		uniformClass = "Stryker_U_oneA_Urban_uniform";
+	};
+	class Stryker_oneA_Corpsman_Urban : Stryker_Base
+	{
+		scope = 2;
+		scopearsenal = 2;
+		scopecurator = 2;
+		displayName = "[Stryker] 1-A Urban Corpsman";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Urban_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Stryker_Urban_oneA_Armor.paa" };
+		uniformClass = "Stryker_U_oneA_Urban_Corpsman_uniform";
+	};
+	class Stryker_oneA_Arid : Stryker_Base
+	{
+		scope = 2;
+		scopearsenal = 2;
+		scopecurator = 2;
+		displayName = "[Stryker] 1-A Arid";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_oneA_Armor.paa" };
+		uniformClass = "Stryker_U_oneA_Arid_uniform";
+	};
+	class Stryker_oneA_Corpsman_Arid : Stryker_Base
+	{
+		scope = 2;
+		scopearsenal = 2;
+		scopecurator = 2;
+		displayName = "[Stryker] 1-A Arid Corpsman";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_oneA_Armor.paa" };
+		uniformClass = "Stryker_U_oneA_Arid_Corpsman_uniform";
 	};
 
 	//One-One
@@ -566,6 +699,7 @@ class CfgVehicles
 	};
 
 	//custom uniform/armor
+	//Soldner
 	class Soldner_Woodland : Stryker_Base
 	{
 		scope = 2;
@@ -595,6 +729,38 @@ class CfgVehicles
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Soldner_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Soldner_Arid_Armor.paa" };
 		uniformClass = "Stryker_U_Soldner_Arid_uniform";
+	};
+
+	//Havoc
+	class Havoc_Woodland : Stryker_Base
+	{
+		scope = 2;
+		scopearsenal = 2;
+		scopecurator = 2;
+		displayName = "[Stryker] Havoc's Woodland";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Havoc_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Havoc_Woodland_Armor.paa" };
+		uniformClass = "Stryker_U_Havoc_Woodland_uniform";
+	};
+	class Havoc_Urban : Stryker_Base
+	{
+		scope = 2;
+		scopearsenal = 2;
+		scopecurator = 2;
+		displayName = "[Stryker] Havoc's Urban";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Havoc_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Havoc_Urban_Armor.paa" };
+		uniformClass = "Stryker_U_Havoc_Urban_uniform";
+	};
+	class Havoc_Arid : Stryker_Base
+	{
+		scope = 2;
+		scopearsenal = 2;
+		scopecurator = 2;
+		displayName = "[Stryker] Havoc's Arid";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Havoc_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Havoc_Arid_Armor.paa" };
+		uniformClass = "Stryker_U_Havoc_Arid_uniform";
 	};
 };
 class cfgWeapons
@@ -693,6 +859,80 @@ class cfgWeapons
 		class ItemInfo : UniformItem
 		{
 			uniformClass = "Stryker_Corpsman_Arid";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+
+	//1-A
+	class Stryker_U_oneA_Woodland_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] 1-A Woodland";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Stryker_oneA_Woodland";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+	class Stryker_U_oneA_Woodland_Corpsman_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] 1-A Woodland Corpsman";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Stryker_oneA_Corpsman_Woodland";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+	class Stryker_U_oneA_Urban_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] 1-A Urban";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Stryker_oneA_Urban";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+	class Stryker_U_oneA_Urban_Corpsman_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] 1-A Urban Corpsman";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Stryker_oneA_Corpsman_Urban";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+	class Stryker_U_oneA_Arid_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] 1-A Arid";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Stryker_oneA_Arid";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+	class Stryker_U_oneA_Arid_Corpsman_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] 1-A Arid Corpsman";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Stryker_oneA_Corpsman_Arid";
 			containerClass = "Supply100";
 			uniformType = "Neopren";
 		};
@@ -921,6 +1161,7 @@ class cfgWeapons
 	};
 
 	//custom uniform/armor
+	//Soldner
 	class Stryker_U_Soldner_Woodland_uniform : Stryker_U_Base
 	{
 		scope = 2;
@@ -953,6 +1194,44 @@ class cfgWeapons
 		class ItemInfo : UniformItem
 		{
 			uniformClass = "Soldner_Arid";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+
+	//Havoc
+	class Stryker_U_Havoc_Woodland_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] Havoc's Woodland";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Havoc_Woodland";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+	class Stryker_U_Havoc_Urban_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] Havoc' Urban";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Havoc_Urban";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+	class Stryker_U_Havoc_Arid_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] Havoc's Arid";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Havoc_Arid";
 			containerClass = "Supply100";
 			uniformType = "Neopren";
 		};
