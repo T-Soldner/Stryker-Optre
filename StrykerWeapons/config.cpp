@@ -384,7 +384,7 @@ class CfgWeapons
 		{
 			class CowsSlot : CowsSlot
 			{
-				compatibleitems[] = { "MEU_REC_HOLO_RED_DMR" };
+				compatibleitems[] = { "MEU_REC_HOLO_RED_DMR","MEU_REC_HOLO_DMR" };
 			};
 		};
 	};
@@ -399,7 +399,7 @@ class CfgWeapons
 		{
 			class CowsSlot : CowsSlot
 			{
-				compatibleitems[] = { "MEU_REC_HOLO_DMR","optic_Nightstalker" };
+				compatibleitems[] = { "MEU_REC_HOLO_DMR","MEU_REC_HOLO_DMR","optic_Nightstalker" };
 			};
 		};
 	};
