@@ -29,10 +29,9 @@ class CfgFactionClasses {
 class CBA_Extended_EventHandlers_base;
 
 class CfgVehicles {
-
-	class MA_Marine_Heavy_BDU;
-	class MA_Marine_Heavy_BDU_OCimport_01 : MA_Marine_Heavy_BDU { scope = 0; class EventHandlers; };
-	class MA_Marine_Heavy_BDU_OCimport_02 : MA_Marine_Heavy_BDU_OCimport_01 { 
+	class OPTRE_UNSC_Soldier_Base;
+	class B_Soldier_F_OCimport_01 : OPTRE_UNSC_Soldier_Base { scope = 0; class EventHandlers; };
+	class B_Soldier_F_OCimport_02 : B_Soldier_F_OCimport_01 {
 		class EventHandlers;
 		editorCategory = "Stryker_EdCat";
 		editorSubCategory = "Stryker_EdSubCat_Men";
@@ -214,7 +213,7 @@ class CfgVehicles {
 	};
 
 
-	class B_StrykerFaction_Rifleman_01 : MA_Marine_Heavy_BDU_OCimport_02 {
+	class B_StrykerFaction_Rifleman_01 : B_Soldier_F_OCimport_02 {
 		editorPreview = StrykerUnits\strykerfaction\data\preview\B_StrykerFaction_Rifleman_01.JPG;
 		author = "Soldner";
 		scope = 2;
@@ -225,29 +224,30 @@ class CfgVehicles {
 		editorCategory = "Stryker_EdCat_MEU";
 		editorSubCategory = "StrykerMEU_EdSubCat_Men";
 
-		identityTypes[] = { "Head_NATO","LanguageENG_F","G_NATO_default" };
+		identityTypes[] = { "NoGlasses",0, };
 
 		uniformClass = "Stryker_U_Woodland_uniform";
 
 		linkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
 		respawnlinkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
 
-		weapons[] = { "OPTRE_MA37","OPTRE_M6G","OPTRE_Binoculars" };
-		respawnWeapons[] = { "OPTRE_MA37","OPTRE_M6G","OPTRE_Binoculars" };
+		weapons[] = { "Stryker_MA37","Stryker_M6G","OPTRE_Binoculars" };
+		respawnWeapons[] = { "Stryker_MA37","Stryker_M6G","OPTRE_Binoculars" };
 
-		magazines[] = { "OPTRE_32Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_32Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag" };
-		respawnMagazines[] = { "OPTRE_32Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_32Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag" };
+		magazines[] = { "OPTRE_32Rnd_762x51_Mag_JHP","TCF_12Rnd_127x40_Mag_JHP","OPTRE_32Rnd_762x51_Mag_JHP","TCF_12Rnd_127x40_Mag_JHP" };
+		respawnMagazines[] = { "OPTRE_32Rnd_762x51_Mag_JHP","TCF_12Rnd_127x40_Mag_JHP","OPTRE_32Rnd_762x51_Mag_JHP","TCF_12Rnd_127x40_Mag_JHP" };
 
 		backpack = "Halo_Rucksack_01";
 
-		ALiVE_orbatCreator_loadout[] = { {"OPTRE_MA37","","","OPTRE_MA37_Smartlink_Scope",{"OPTRE_32Rnd_762x51_Mag",32},{},""},{},{"OPTRE_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"OPTRE_8Rnd_127x40_Mag",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_M2_Smoke",3,1},{"OPTRE_M9_Frag",2,1}}},{"MA_TGE_InvisVest",{{"TCF_32Rnd_762x51_Mag_JHP",10,32},{"TCF_12Rnd_127x40_Mag_JHP",2,12}}},{"Halo_Rucksack_01",{}},"Stryker_Woodland_Helmet","G_Combat",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
+		ALiVE_orbatCreator_loadout[] = { {"Stryker_MA37","","","Stryker_MA37_Smartlink_Scope",{"OPTRE_32Rnd_762x51_Mag_JHP",32},{},""},{},{"Stryker_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"TCF_12Rnd_127x40_Mag_JHP",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_M2_Smoke",3,1},{"OPTRE_M9_Frag",2,1}}},{"MA_TGE_InvisVest",{{"TCF_32Rnd_762x51_Mag_JHP",10,32},{"TCF_12Rnd_127x40_Mag_JHP",2,12}}},{"Halo_Rucksack_01",{}},"Stryker_Woodland_Helmet","G_Combat",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
 
 
 		class EventHandlers : EventHandlers {
 			class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {};
+			
 
 			class ALiVE_orbatCreator {
-				init = "if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
+				init = "(_this select 0) setVariable [""BIS_enableRandomization"",false];if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
 			};
 
 		};
@@ -259,36 +259,23 @@ class CfgVehicles {
 
 	class B_StrykerFaction_Autorifleman_01 : B_StrykerFaction_Rifleman_01 {
 		editorPreview = "StrykerUnits\strykerfaction\data\preview\B_StrykerFaction_Autorifleman_01.JPG";
-		author = "Soldner";
-		scope = 2;
-		scopeCurator = 2;
 		displayName = "Autorifleman";
-		side = 1;
-		faction = "Stryker_Faction";
 
-		identityTypes[] = { "Head_NATO","LanguageENG_F","G_NATO_default" };
+		weapons[] = { "Stryker_M247","Stryker_M6G","OPTRE_Binoculars" };
+		respawnWeapons[] = { "Stryker_M247","Stryker_M6G","OPTRE_Binoculars" };
 
-		uniformClass = "Stryker_U_Woodland_uniform";
+		magazines[] = { "MEU_100Rnd_762x51_AP_HV_Box","TCF_12Rnd_127x40_Mag_JHP","MEU_100Rnd_762x51_AP_HV_Box","TCF_12Rnd_127x40_Mag_JHP" };
+		respawnMagazines[] = { "MEU_100Rnd_762x51_AP_HV_Box","TCF_12Rnd_127x40_Mag_JHP","MEU_100Rnd_762x51_AP_HV_Box","TCF_12Rnd_127x40_Mag_JHP" };
 
-		linkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-		respawnlinkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-
-		weapons[] = { "OPTRE_M247","OPTRE_M6G","OPTRE_Binoculars" };
-		respawnWeapons[] = { "OPTRE_M247","OPTRE_M6G","OPTRE_Binoculars" };
-
-		magazines[] = { "OPTRE_100Rnd_762x51_Box","OPTRE_8Rnd_127x40_Mag","OPTRE_100Rnd_762x51_Box","OPTRE_8Rnd_127x40_Mag" };
-		respawnMagazines[] = { "OPTRE_100Rnd_762x51_Box","OPTRE_8Rnd_127x40_Mag","OPTRE_100Rnd_762x51_Box","OPTRE_8Rnd_127x40_Mag" };
-
-		backpack = "Halo_Rucksack_01";
-
-		ALiVE_orbatCreator_loadout[] = { {"OPTRE_M247","","OPTRE_M45_Flashlight","Optre_Recon_Sight_Green",{"OPTRE_100Rnd_762x51_Box",100},{},"bipod_01_F_blk"},{},{"OPTRE_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"OPTRE_8Rnd_127x40_Mag",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_100Rnd_762x51_Box",2,100}}},{"MA_TGE_InvisVest",{{"TCF_12Rnd_127x40_Mag_JHP",2,12},{"OPTRE_100Rnd_762x51_Box",3,100}}},{"Halo_Rucksack_01",{}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
+		ALiVE_orbatCreator_loadout[] = { {"Stryker_M247","","OPTRE_M45_Flashlight","Optre_Recon_Sight_Green",{"MEU_100Rnd_762x51_AP_HV_Box",100},{},"bipod_01_F_blk"},{},{"Stryker_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"TCF_12Rnd_127x40_Mag_JHP",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"MEU_100Rnd_762x51_AP_HV_Box",2,100}}},{"MA_TGE_InvisVest",{{"TCF_12Rnd_127x40_Mag_JHP",2,12},{"MEU_100Rnd_762x51_AP_HV_Box",3,100}}},{"Halo_Rucksack_01",{}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
 
 
 		class EventHandlers : EventHandlers {
 			class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {};
+			
 
 			class ALiVE_orbatCreator {
-				init = "if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
+				init = "(_this select 0) setVariable [""BIS_enableRandomization"",false];if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
 			};
 
 		};
@@ -300,36 +287,23 @@ class CfgVehicles {
 
 	class B_StrykerFaction_Marksman_01 : B_StrykerFaction_Rifleman_01 {
 		editorPreview = "StrykerUnits\strykerfaction\data\preview\B_StrykerFaction_Marksman_01.JPG";
-		author = "Soldner";
-		scope = 2;
-		scopeCurator = 2;
 		displayName = "Marksman";
-		side = 1;
-		faction = "Stryker_Faction";
 
-		identityTypes[] = { "Head_NATO","LanguageENG_F","G_NATO_default" };
+		weapons[] = { "Stryker_M392_DMR","Stryker_M6G","OPTRE_Binoculars" };
+		respawnWeapons[] = { "Stryker_M392_DMR","Stryker_M6G","OPTRE_Binoculars" };
 
-		uniformClass = "Stryker_U_Woodland_uniform";
+		magazines[] = { "OPTRE_15Rnd_DMR_762x51_Mag_AP","TCF_12Rnd_127x40_Mag_JHP","OPTRE_15Rnd_DMR_762x51_Mag_AP","TCF_12Rnd_127x40_Mag_JHP" };
+		respawnMagazines[] = { "OPTRE_15Rnd_DMR_762x51_Mag_AP","TCF_12Rnd_127x40_Mag_JHP","OPTRE_15Rnd_DMR_762x51_Mag_AP","TCF_12Rnd_127x40_Mag_JHP" };
 
-		linkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-		respawnlinkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-
-		weapons[] = { "OPTRE_M392_DMR","OPTRE_M6G","OPTRE_Binoculars" };
-		respawnWeapons[] = { "OPTRE_M392_DMR","OPTRE_M6G","OPTRE_Binoculars" };
-
-		magazines[] = { "OPTRE_15Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_15Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag" };
-		respawnMagazines[] = { "OPTRE_15Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_15Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag" };
-
-		backpack = "Halo_Rucksack_01";
-
-		ALiVE_orbatCreator_loadout[] = { {"OPTRE_M392_DMR","","OPTRE_DMR_Light","OPTRE_BMR_Scope",{"OPTRE_15Rnd_762x51_Mag",15},{},""},{},{"OPTRE_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"OPTRE_8Rnd_127x40_Mag",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"TCF_15Rnd_762x51_Mag_AP",10,15}}},{"MA_TGE_InvisVest",{{"TCF_12Rnd_127x40_Mag_JHP",2,12},{"OPTRE_M2_Smoke",2,1},{"OPTRE_M9_Frag",2,1}}},{"Halo_Rucksack_01",{}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
+		ALiVE_orbatCreator_loadout[] = { {"Stryker_M392_DMR","","OPTRE_DMR_Light","OPTRE_M392_Scope",{"OPTRE_15Rnd_DMR_762x51_Mag_AP",15},{},""},{},{"Stryker_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"TCF_12Rnd_127x40_Mag_JHP",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"TCF_15Rnd_762x51_Mag_AP",10,15}}},{"MA_TGE_InvisVest",{{"TCF_12Rnd_127x40_Mag_JHP",2,12},{"OPTRE_M2_Smoke",2,1},{"OPTRE_M9_Frag",2,1}}},{"Halo_Rucksack_01",{}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
 
 
 		class EventHandlers : EventHandlers {
 			class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {};
+			
 
 			class ALiVE_orbatCreator {
-				init = "if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
+				init = "(_this select 0) setVariable [""BIS_enableRandomization"",false];if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
 			};
 
 		};
@@ -341,37 +315,29 @@ class CfgVehicles {
 
 	class B_StrykerFaction_Corpsman_01 : B_StrykerFaction_Rifleman_01 {
 		editorPreview = "StrykerUnits\strykerfaction\data\preview\B_StrykerFaction_Corpsman_01.JPG";
-		author = "Soldner";
-		scope = 2;
-		scopeCurator = 2;
 		displayName = "Corpsman";
-		side = 1;
-		faction = "Stryker_Faction";
 		attendant = 1;
-
-		identityTypes[] = { "Head_NATO","LanguageENG_F","G_NATO_default" };
 
 		uniformClass = "Stryker_U_Woodland_Corpsman_uniform";
 
 		linkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Corpsman_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
 		respawnlinkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Corpsman_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
 
-		weapons[] = { "OPTRE_MA37","OPTRE_M6G","OPTRE_Binoculars" };
-		respawnWeapons[] = { "OPTRE_MA37","OPTRE_M6G","OPTRE_Binoculars" };
+		weapons[] = { "Stryker_MA37","Stryker_M6G","OPTRE_Binoculars" };
+		respawnWeapons[] = { "Stryker_MA37","Stryker_M6G","OPTRE_Binoculars" };
 
-		magazines[] = { "OPTRE_32Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_32Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag" };
-		respawnMagazines[] = { "OPTRE_32Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_32Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag" };
+		magazines[] = { "OPTRE_32Rnd_762x51_Mag_JHP","TCF_12Rnd_127x40_Mag_JHP","OPTRE_32Rnd_762x51_Mag_JHP","TCF_12Rnd_127x40_Mag_JHP" };
+		respawnMagazines[] = { "OPTRE_32Rnd_762x51_Mag_JHP","TCF_12Rnd_127x40_Mag_JHP","OPTRE_32Rnd_762x51_Mag_JHP","TCF_12Rnd_127x40_Mag_JHP" };
 
-		backpack = "Halo_Rucksack_01";
-
-		ALiVE_orbatCreator_loadout[] = { {"OPTRE_MA37","","","OPTRE_MA37_Smartlink_Scope",{"OPTRE_32Rnd_762x51_Mag",32},{},""},{},{"OPTRE_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"OPTRE_8Rnd_127x40_Mag",8},{},""},{"Stryker_U_Woodland_Corpsman_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_M9_Frag",2,1},{"OPTRE_M2_Smoke",2,1},{"OPTRE_M2_Smoke_Blue",2,1},{"OPTRE_M2_Smoke_Purple",2,1}}},{"MA_TGE_InvisVest",{{"TCF_32Rnd_762x51_Mag_JHP",10,32},{"TCF_12Rnd_127x40_Mag_JHP",2,12}}},{"Halo_Rucksack_01",{{"ACE_fieldDressing",2},{"ACE_elasticBandage",2},{"ACE_packingBandage",1},{"ACE_quikclot",1}}},"Stryker_Woodland_Corpsman_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
+		ALiVE_orbatCreator_loadout[] = { {"Stryker_MA37","","","Stryker_MA37_Smartlink_Scope",{"OPTRE_32Rnd_762x51_Mag_JHP",32},{},""},{},{"Stryker_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"TCF_12Rnd_127x40_Mag_JHP",8},{},""},{"Stryker_U_Woodland_Corpsman_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_M9_Frag",2,1},{"OPTRE_M2_Smoke",2,1},{"OPTRE_M2_Smoke_Blue",2,1},{"OPTRE_M2_Smoke_Purple",2,1}}},{"MA_TGE_InvisVest",{{"TCF_32Rnd_762x51_Mag_JHP",10,32},{"TCF_12Rnd_127x40_Mag_JHP",2,12}}},{"Halo_Rucksack_01",{{"ACE_fieldDressing",2},{"ACE_elasticBandage",2},{"ACE_packingBandage",1},{"ACE_quikclot",1}}},"Stryker_Woodland_Corpsman_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
 
 
 		class EventHandlers : EventHandlers {
 			class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {};
+			
 
 			class ALiVE_orbatCreator {
-				init = "if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
+				init = "(_this select 0) setVariable [""BIS_enableRandomization"",false];if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
 			};
 
 		};
@@ -383,37 +349,24 @@ class CfgVehicles {
 
 	class B_StrykerFaction_Combat_Engineer_01 : B_StrykerFaction_Rifleman_01 {
 		editorPreview = "StrykerUnits\strykerfaction\data\preview\B_StrykerFaction_Combat_Engineer_01.JPG";
-		author = "Soldner";
-		scope = 2;
-		scopeCurator = 2;
 		displayName = "Combat Engineer";
-		side = 1;
-		faction = "Stryker_Faction";
 		engineer = true;
 
-		identityTypes[] = { "Head_NATO","LanguageENG_F","G_NATO_default" };
+		weapons[] = { "Stryker_M90A","Stryker_M6G","OPTRE_Binoculars" };
+		respawnWeapons[] = { "Stryker_M90A","Stryker_M6G","OPTRE_Binoculars" };
 
-		uniformClass = "Stryker_U_Woodland_uniform";
+		magazines[] = { "OPTRE_12Rnd_8Gauge_Pellet","TCF_12Rnd_127x40_Mag_JHP","OPTRE_12Rnd_8Gauge_Pellet","TCF_12Rnd_127x40_Mag_JHP" };
+		respawnMagazines[] = { "OPTRE_12Rnd_8Gauge_Pellet","TCF_12Rnd_127x40_Mag_JHP","OPTRE_12Rnd_8Gauge_Pellet","TCF_12Rnd_127x40_Mag_JHP" };
 
-		linkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-		respawnlinkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-
-		weapons[] = { "OPTRE_M90A","OPTRE_M6G","OPTRE_Binoculars" };
-		respawnWeapons[] = { "OPTRE_M90A","OPTRE_M6G","OPTRE_Binoculars" };
-
-		magazines[] = { "OPTRE_6Rnd_8Gauge_Pellets","OPTRE_8Rnd_127x40_Mag","OPTRE_6Rnd_8Gauge_Pellets","OPTRE_8Rnd_127x40_Mag" };
-		respawnMagazines[] = { "OPTRE_6Rnd_8Gauge_Pellets","OPTRE_8Rnd_127x40_Mag","OPTRE_6Rnd_8Gauge_Pellets","OPTRE_8Rnd_127x40_Mag" };
-
-		backpack = "Halo_Rucksack_01";
-
-		ALiVE_orbatCreator_loadout[] = { {"OPTRE_M90A","","","",{"OPTRE_6Rnd_8Gauge_Pellets",6},{},""},{},{"OPTRE_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"OPTRE_8Rnd_127x40_Mag",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_12Rnd_8Gauge_Slugs",5,12}}},{"MA_TGE_InvisVest",{{"TCF_12Rnd_127x40_Mag_JHP",2,12},{"OPTRE_12Rnd_8Gauge_Pellets",4,12}}},{"Halo_Rucksack_01",{{"ACE_M26_Clacker",1},{"ACE_DefusalKit",1},{"C7_Remote_Mag",4,1},{"C12_Remote_Mag",1,1}}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
+		ALiVE_orbatCreator_loadout[] = { {"Stryker_M90A","","","",{"OPTRE_12Rnd_8Gauge_Pellet",6},{},""},{},{"Stryker_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"TCF_12Rnd_127x40_Mag_JHP",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_12Rnd_8Gauge_Slugs",5,12}}},{"MA_TGE_InvisVest",{{"TCF_12Rnd_127x40_Mag_JHP",2,12},{"OPTRE_12Rnd_8Gauge_Pellets",4,12}}},{"Halo_Rucksack_01",{{"ACE_M26_Clacker",1},{"ACE_DefusalKit",1},{"C7_Remote_Mag",4,1},{"C12_Remote_Mag",1,1}}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
 
 
 		class EventHandlers : EventHandlers {
 			class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {};
+			
 
 			class ALiVE_orbatCreator {
-				init = "if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
+				init = "(_this select 0) setVariable [""BIS_enableRandomization"",false];if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
 			};
 
 		};
@@ -425,36 +378,23 @@ class CfgVehicles {
 
 	class B_StrykerFaction_Grenadier_01 : B_StrykerFaction_Rifleman_01 {
 		editorPreview = "StrykerUnits\strykerfaction\data\preview\B_StrykerFaction_Grenadier_01.JPG";
-		author = "Soldner";
-		scope = 2;
-		scopeCurator = 2;
 		displayName = "Grenadier";
-		side = 1;
-		faction = "Stryker_Faction";
 
-		identityTypes[] = { "Head_NATO","LanguageENG_F","G_NATO_default" };
+		weapons[] = { "Stryker_MA37GL","Stryker_M6G","OPTRE_Binoculars" };
+		respawnWeapons[] = { "Stryker_MA37GL","Stryker_M6G","OPTRE_Binoculars" };
 
-		uniformClass = "Stryker_U_Woodland_uniform";
+		magazines[] = { "OPTRE_32Rnd_762x51_Mag_JHP","1Rnd_HE_Grenade_shell","TCF_12Rnd_127x40_Mag_JHP","OPTRE_32Rnd_762x51_Mag_JHP","1Rnd_HE_Grenade_shell","TCF_12Rnd_127x40_Mag_JHP" };
+		respawnMagazines[] = { "OPTRE_32Rnd_762x51_Mag_JHP","1Rnd_HE_Grenade_shell","TCF_12Rnd_127x40_Mag_JHP","OPTRE_32Rnd_762x51_Mag_JHP","1Rnd_HE_Grenade_shell","TCF_12Rnd_127x40_Mag_JHP" };
 
-		linkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-		respawnlinkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-
-		weapons[] = { "OPTRE_MA37GL","OPTRE_M6G","OPTRE_Binoculars" };
-		respawnWeapons[] = { "OPTRE_MA37GL","OPTRE_M6G","OPTRE_Binoculars" };
-
-		magazines[] = { "OPTRE_32Rnd_762x51_Mag","1Rnd_HE_Grenade_shell","OPTRE_8Rnd_127x40_Mag","OPTRE_32Rnd_762x51_Mag","1Rnd_HE_Grenade_shell","OPTRE_8Rnd_127x40_Mag" };
-		respawnMagazines[] = { "OPTRE_32Rnd_762x51_Mag","1Rnd_HE_Grenade_shell","OPTRE_8Rnd_127x40_Mag","OPTRE_32Rnd_762x51_Mag","1Rnd_HE_Grenade_shell","OPTRE_8Rnd_127x40_Mag" };
-
-		backpack = "Halo_Rucksack_01";
-
-		ALiVE_orbatCreator_loadout[] = { {"OPTRE_MA37GL","","","",{"OPTRE_32Rnd_762x51_Mag",32},{"1Rnd_HE_Grenade_shell",1},""},{},{"OPTRE_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"OPTRE_8Rnd_127x40_Mag",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"1Rnd_HE_Grenade_shell",3,1},{"TCF_32Rnd_762x51_Mag_JHP",7,32}}},{"MA_TGE_InvisVest",{{"TCF_12Rnd_127x40_Mag_JHP",2,12},{"TCF_32Rnd_762x51_Mag_JHP",3,32},{"1Rnd_HEDP_MEU_shell",6,1}}},{"Halo_Rucksack_01",{}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
+		ALiVE_orbatCreator_loadout[] = { {"Stryker_MA37GL","","","",{"OPTRE_32Rnd_762x51_Mag_JHP",32},{"1Rnd_HE_Grenade_shell",1},""},{},{"Stryker_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"TCF_12Rnd_127x40_Mag_JHP",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"1Rnd_HE_Grenade_shell",3,1},{"TCF_32Rnd_762x51_Mag_JHP",7,32}}},{"MA_TGE_InvisVest",{{"TCF_12Rnd_127x40_Mag_JHP",2,12},{"TCF_32Rnd_762x51_Mag_JHP",3,32},{"1Rnd_HEDP_MEU_shell",6,1}}},{"Halo_Rucksack_01",{}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
 
 
 		class EventHandlers : EventHandlers {
 			class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {};
+			
 
 			class ALiVE_orbatCreator {
-				init = "if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
+				init = "(_this select 0) setVariable [""BIS_enableRandomization"",false];if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
 			};
 
 		};
@@ -466,36 +406,25 @@ class CfgVehicles {
 
 	class B_StrykerFaction_Radio_Operator_01 : B_StrykerFaction_Rifleman_01 {
 		editorPreview = "StrykerUnits\strykerfaction\data\preview\B_StrykerFaction_Radio_Operator_01.JPG";
-		author = "Soldner";
-		scope = 2;
-		scopeCurator = 2;
 		displayName = "Radio Operator";
-		side = 1;
-		faction = "Stryker_Faction";
 
-		identityTypes[] = { "Head_NATO","LanguageENG_F","G_NATO_default" };
+		weapons[] = { "Stryker_MA37","Stryker_M6G","OPTRE_Binoculars" };
+		respawnWeapons[] = { "Stryker_MA37","Stryker_M6G","OPTRE_Binoculars" };
 
-		uniformClass = "Stryker_U_Woodland_uniform";
-
-		linkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-		respawnlinkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-
-		weapons[] = { "OPTRE_MA37","OPTRE_M6G","OPTRE_Binoculars" };
-		respawnWeapons[] = { "OPTRE_MA37","OPTRE_M6G","OPTRE_Binoculars" };
-
-		magazines[] = { "OPTRE_32Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_32Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag" };
-		respawnMagazines[] = { "OPTRE_32Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_32Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag" };
+		magazines[] = { "OPTRE_32Rnd_762x51_Mag_JHP","TCF_12Rnd_127x40_Mag_JHP","OPTRE_32Rnd_762x51_Mag_JHP","TCF_12Rnd_127x40_Mag_JHP" };
+		respawnMagazines[] = { "OPTRE_32Rnd_762x51_Mag_JHP","TCF_12Rnd_127x40_Mag_JHP","OPTRE_32Rnd_762x51_Mag_JHP","TCF_12Rnd_127x40_Mag_JHP" };
 
 		backpack = "Halo_LR";
 
-		ALiVE_orbatCreator_loadout[] = { {"OPTRE_MA37","","","OPTRE_MA37_Smartlink_Scope",{"OPTRE_32Rnd_762x51_Mag",32},{},""},{},{"OPTRE_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"OPTRE_8Rnd_127x40_Mag",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_M2_Smoke",4,1},{"OPTRE_M9_Frag",2,1}}},{"MA_TGE_InvisVest",{{"TCF_32Rnd_762x51_Mag_JHP",10,32},{"TCF_12Rnd_127x40_Mag_JHP",2,12}}},{"Halo_LR",{}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
+		ALiVE_orbatCreator_loadout[] = { {"Stryker_MA37","","","Stryker_MA37_Smartlink_Scope",{"OPTRE_32Rnd_762x51_Mag_JHP",32},{},""},{},{"Stryker_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"TCF_12Rnd_127x40_Mag_JHP",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_M2_Smoke",4,1},{"OPTRE_M9_Frag",2,1}}},{"MA_TGE_InvisVest",{{"TCF_32Rnd_762x51_Mag_JHP",10,32},{"TCF_12Rnd_127x40_Mag_JHP",2,12}}},{"Halo_LR",{}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
 
 
 		class EventHandlers : EventHandlers {
 			class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {};
+			
 
 			class ALiVE_orbatCreator {
-				init = "if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
+				init = "(_this select 0) setVariable [""BIS_enableRandomization"",false];if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
 			};
 
 		};
@@ -507,36 +436,25 @@ class CfgVehicles {
 
 	class B_StrykerFaction_Anti_Tank_01 : B_StrykerFaction_Rifleman_01 {
 		editorPreview = "StrykerUnits\strykerfaction\data\preview\B_StrykerFaction_Anti_Tank_01.JPG";
-		author = "Soldner";
-		scope = 2;
-		scopeCurator = 2;
 		displayName = "Anti-Tank";
-		side = 1;
-		faction = "Stryker_Faction";
 
-		identityTypes[] = { "Head_NATO","LanguageENG_F","G_NATO_default" };
+		weapons[] = { "Stryker_MA37","Stryker_M41_SSR","Stryker_M6G","OPTRE_Binoculars" };
+		respawnWeapons[] = { "Stryker_MA37","Stryker_M41_SSR","Stryker_M6G","OPTRE_Binoculars" };
 
-		uniformClass = "Stryker_U_Woodland_uniform";
-
-		linkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-		respawnlinkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-
-		weapons[] = { "OPTRE_MA37","OPTRE_M41_SSR","OPTRE_M6G","OPTRE_Binoculars" };
-		respawnWeapons[] = { "OPTRE_MA37","OPTRE_M41_SSR","OPTRE_M6G","OPTRE_Binoculars" };
-
-		magazines[] = { "OPTRE_32Rnd_762x51_Mag","OPTRE_M41_Twin_HEAT_G","OPTRE_8Rnd_127x40_Mag","OPTRE_32Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag" };
-		respawnMagazines[] = { "OPTRE_32Rnd_762x51_Mag","OPTRE_M41_Twin_HEAT_G","OPTRE_8Rnd_127x40_Mag","OPTRE_32Rnd_762x51_Mag","OPTRE_8Rnd_127x40_Mag" };
+		magazines[] = { "OPTRE_32Rnd_762x51_Mag_JHP","OPTRE_M41_Twin_HEAT","TCF_12Rnd_127x40_Mag_JHP","OPTRE_32Rnd_762x51_Mag_JHP","TCF_12Rnd_127x40_Mag_JHP" };
+		respawnMagazines[] = { "OPTRE_32Rnd_762x51_Mag_JHP","OPTRE_M41_Twin_HEAT","TCF_12Rnd_127x40_Mag_JHP","OPTRE_32Rnd_762x51_Mag_JHP","TCF_12Rnd_127x40_Mag_JHP" };
 
 		backpack = "Halo_Rucksack_02";
 
-		ALiVE_orbatCreator_loadout[] = { {"OPTRE_MA37","","","OPTRE_MA37_Smartlink_Scope",{"OPTRE_32Rnd_762x51_Mag",32},{},""},{"OPTRE_M41_Twin_HEAT_G","","","",{"OPTRE_M41_Twin_HEAT_G",2},{},""},{"OPTRE_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"OPTRE_8Rnd_127x40_Mag",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_M2_Smoke",3,1},{"OPTRE_M9_Frag",2,1}}},{"MA_TGE_InvisVest",{{"TCF_32Rnd_762x51_Mag_JHP",10,32},{"TCF_12Rnd_127x40_Mag_JHP",2,12},{"OPTRE_M41_Twin_AI",1,2}}},{"Halo_Rucksack_02",{{"OPTRE_M41_Twin_HEAT_Thermal",4,2}}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
+		ALiVE_orbatCreator_loadout[] = { {"Stryker_MA37","","","Stryker_MA37_Smartlink_Scope",{"OPTRE_32Rnd_762x51_Mag_JHP",32},{},""},{"OPTRE_M41_Twin_HEAT","","","",{"OPTRE_M41_Twin_HEAT",2},{},""},{"Stryker_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"TCF_12Rnd_127x40_Mag_JHP",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_M2_Smoke",3,1},{"OPTRE_M9_Frag",2,1}}},{"MA_TGE_InvisVest",{{"TCF_32Rnd_762x51_Mag_JHP",10,32},{"TCF_12Rnd_127x40_Mag_JHP",2,12},{"OPTRE_M41_Twin_AI",1,2}}},{"Halo_Rucksack_02",{{"OPTRE_M41_Twin_HEAT_Thermal",4,2}}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
 
 
 		class EventHandlers : EventHandlers {
 			class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {};
+			
 
 			class ALiVE_orbatCreator {
-				init = "if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
+				init = "(_this select 0) setVariable [""BIS_enableRandomization"",false];if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
 			};
 
 		};
@@ -548,36 +466,23 @@ class CfgVehicles {
 
 	class B_StrykerFaction_Team_Lead_01 : B_StrykerFaction_Rifleman_01 {
 		editorPreview = "StrykerUnits\strykerfaction\data\preview\B_StrykerFaction_Team_Lead_01.JPG";
-		author = "Soldner";
-		scope = 2;
-		scopeCurator = 2;
 		displayName = "Team Lead";
-		side = 1;
-		faction = "Stryker_Faction";
 
-		identityTypes[] = { "Head_NATO","LanguageENG_F","G_NATO_default" };
+		weapons[] = { "Stryker_BR55","Stryker_M6G","OPTRE_Binoculars" };
+		respawnWeapons[] = { "Stryker_BR55","Stryker_M6G","OPTRE_Binoculars" };
 
-		uniformClass = "Stryker_U_Woodland_uniform";
+		magazines[] = { "OPTRE_36Rnd_95x40_Mag_HPSAP","TCF_12Rnd_127x40_Mag_JHP","OPTRE_36Rnd_95x40_Mag_HPSAP","TCF_12Rnd_127x40_Mag_JHP" };
+		respawnMagazines[] = { "OPTRE_36Rnd_95x40_Mag_HPSAP","TCF_12Rnd_127x40_Mag_JHP","OPTRE_36Rnd_95x40_Mag_HPSAP","TCF_12Rnd_127x40_Mag_JHP" };
 
-		linkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-		respawnlinkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-
-		weapons[] = { "OPTRE_BR55HB","OPTRE_M6G","OPTRE_Binoculars" };
-		respawnWeapons[] = { "OPTRE_BR55HB","OPTRE_M6G","OPTRE_Binoculars" };
-
-		magazines[] = { "OPTRE_36Rnd_95x40_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_36Rnd_95x40_Mag","OPTRE_8Rnd_127x40_Mag" };
-		respawnMagazines[] = { "OPTRE_36Rnd_95x40_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_36Rnd_95x40_Mag","OPTRE_8Rnd_127x40_Mag" };
-
-		backpack = "Halo_Rucksack_01";
-
-		ALiVE_orbatCreator_loadout[] = { {"OPTRE_BR55HB","","","OPTRE_BR55HB_Scope",{"OPTRE_36Rnd_95x40_Mag",36},{},""},{},{"OPTRE_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"OPTRE_8Rnd_127x40_Mag",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_M2_Smoke",3,1},{"OPTRE_M9_Frag",2,1},{"TCF_36Rnd_95x40_Mag_JHP",7,36}}},{"MA_TGE_InvisVest",{{"TCF_12Rnd_127x40_Mag_JHP",2,12},{"TCF_36Rnd_95x40_Mag_JHP",2,36},{"OPTRE_M9_Frag",2,1},{"SmokeShell",2,1}}},{"Halo_Rucksack_01",{}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
+		ALiVE_orbatCreator_loadout[] = { {"Stryker_BR55","","","OPTRE_BR55HB_Scope",{"OPTRE_36Rnd_95x40_Mag_HPSAP",36},{},""},{},{"Stryker_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"TCF_12Rnd_127x40_Mag_JHP",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_M2_Smoke",3,1},{"OPTRE_M9_Frag",2,1},{"TCF_36Rnd_95x40_Mag_JHP",7,36}}},{"MA_TGE_InvisVest",{{"TCF_12Rnd_127x40_Mag_JHP",2,12},{"TCF_36Rnd_95x40_Mag_JHP",2,36},{"OPTRE_M9_Frag",2,1},{"SmokeShell",2,1}}},{"Halo_Rucksack_01",{}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
 
 
 		class EventHandlers : EventHandlers {
 			class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {};
+			
 
 			class ALiVE_orbatCreator {
-				init = "if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
+				init = "(_this select 0) setVariable [""BIS_enableRandomization"",false];if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
 			};
 
 		};
@@ -589,36 +494,23 @@ class CfgVehicles {
 
 	class B_StrykerFaction_Squad_Leader_01 : B_StrykerFaction_Team_Lead_01 {
 		editorPreview = "StrykerUnits\strykerfaction\data\preview\B_StrykerFaction_Squad_Leader_01.JPG";
-		author = "Soldner";
-		scope = 2;
-		scopeCurator = 2;
 		displayName = "Squad Leader";
-		side = 1;
-		faction = "Stryker_Faction";
 
-		identityTypes[] = { "Head_NATO","LanguageENG_F","G_NATO_default" };
+		weapons[] = { "Stryker_BR55","Stryker_M6G","OPTRE_Binoculars" };
+		respawnWeapons[] = { "Stryker_BR55","Stryker_M6G","OPTRE_Binoculars" };
 
-		uniformClass = "Stryker_U_Woodland_uniform";
+		magazines[] = { "OPTRE_36Rnd_95x40_Mag_HPSAP","TCF_12Rnd_127x40_Mag_JHP","OPTRE_36Rnd_95x40_Mag_HPSAP","TCF_12Rnd_127x40_Mag_JHP" };
+		respawnMagazines[] = { "OPTRE_36Rnd_95x40_Mag_HPSAP","TCF_12Rnd_127x40_Mag_JHP","OPTRE_36Rnd_95x40_Mag_HPSAP","TCF_12Rnd_127x40_Mag_JHP" };
 
-		linkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-		respawnlinkedItems[] = { "MA_TGE_InvisVest","Stryker_Woodland_Helmet","ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C" };
-
-		weapons[] = { "OPTRE_BR55HB","OPTRE_M6G","OPTRE_Binoculars" };
-		respawnWeapons[] = { "OPTRE_BR55HB","OPTRE_M6G","OPTRE_Binoculars" };
-
-		magazines[] = { "OPTRE_36Rnd_95x40_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_36Rnd_95x40_Mag","OPTRE_8Rnd_127x40_Mag" };
-		respawnMagazines[] = { "OPTRE_36Rnd_95x40_Mag","OPTRE_8Rnd_127x40_Mag","OPTRE_36Rnd_95x40_Mag","OPTRE_8Rnd_127x40_Mag" };
-
-		backpack = "Halo_Rucksack_01";
-
-		ALiVE_orbatCreator_loadout[] = { {"OPTRE_BR55HB","","","OPTRE_BR55HB_Scope",{"OPTRE_36Rnd_95x40_Mag",36},{},""},{},{"OPTRE_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"OPTRE_8Rnd_127x40_Mag",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_M2_Smoke",3,1},{"OPTRE_M9_Frag",2,1},{"TCF_36Rnd_95x40_Mag_JHP",7,36}}},{"MA_TGE_InvisVest",{{"TCF_12Rnd_127x40_Mag_JHP",2,12},{"TCF_36Rnd_95x40_Mag_JHP",2,36},{"OPTRE_M9_Frag",2,1},{"SmokeShell",2,1}}},{"Halo_Rucksack_01",{}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
+		ALiVE_orbatCreator_loadout[] = { {"Stryker_BR55","","","OPTRE_BR55HB_Scope",{"OPTRE_36Rnd_95x40_Mag_HPSAP",36},{},""},{},{"Stryker_M6G","","OPTRE_M6G_Flashlight","OPTRE_M6G_Scope",{"TCF_12Rnd_127x40_Mag_JHP",8},{},""},{"Stryker_U_Woodland_uniform",{{"OPTRE_Biofoam",1},{"OPTRE_M2_Smoke",3,1},{"OPTRE_M9_Frag",2,1},{"TCF_36Rnd_95x40_Mag_JHP",7,36}}},{"MA_TGE_InvisVest",{{"TCF_12Rnd_127x40_Mag_JHP",2,12},{"TCF_36Rnd_95x40_Mag_JHP",2,36},{"OPTRE_M9_Frag",2,1},{"SmokeShell",2,1}}},{"Halo_Rucksack_01",{}},"Stryker_Woodland_Helmet","",{"OPTRE_Binoculars","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ACE_Altimeter","OPTRE_NVGT_C"} };
 
 
 		class EventHandlers : EventHandlers {
 			class CBA_Extended_EventHandlers : CBA_Extended_EventHandlers_base {};
+			
 
 			class ALiVE_orbatCreator {
-				init = "if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
+				init = "(_this select 0) setVariable [""BIS_enableRandomization"",false];if (local (_this select 0)) then {_onSpawn = {_this = _this select 0;sleep 0.2; _backpack = gettext(configfile >> 'cfgvehicles' >> (typeof _this) >> 'backpack'); waituntil {sleep 0.2; backpack _this == _backpack};if !(_this getVariable ['ALiVE_OverrideLoadout',false]) then {_loadout = getArray(configFile >> 'CfgVehicles' >> (typeOf _this) >> 'ALiVE_orbatCreator_loadout'); _this setunitloadout _loadout;reload _this};};_this spawn _onSpawn;(_this select 0) addMPEventHandler ['MPRespawn', _onSpawn];};";
 			};
 
 		};

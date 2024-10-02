@@ -29,4 +29,8 @@ class CfgMusicClasses
 	{
 		displayName = "Stryker - Music Pack";
 	};
+	class StrykerNHMusic
+	{
+		displayName = "Stryker - Music Pack (Non-Halo)";
+	};
 };

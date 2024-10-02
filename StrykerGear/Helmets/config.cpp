@@ -43,7 +43,7 @@ class XtdGearModels
 				values[] = {"base","corpsman"};
 				class base
 				{
-					label = "Base";
+					label = "Marine";
 				};
 				class corpsman
 				{

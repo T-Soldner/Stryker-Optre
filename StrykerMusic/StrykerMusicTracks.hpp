@@ -75,3 +75,10 @@ class H3ToTurnATide
 	duration = 335;
 	musicClass = "StrykerMusic";
 };
+class YouThinkIAintWorthADollarB
+{
+	name = "QotSA - You Think I Aint Worth A Dollar";
+	sound[] = { "Strykermusic\data\Tracks\YouThinkIAintWorthADollarB.ogg",db + 0,1 };
+	duration = 157;
+	musicClass = "StrykerNHMusic";
+};
