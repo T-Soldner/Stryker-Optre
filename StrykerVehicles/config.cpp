@@ -23,8 +23,8 @@ class CfgVehicles
 		displayName = "[Stryker] Hugin Drone";
 		fuelCapacity = 2000;
 		fuelConsumptionRate = 0.01;
-		editorCategory = "Stryker_EdCat_MEU";
-		editorSubcategory = "Stryker_EdSubCat_Drones";
+		editorCategory = "Stryker_MEU_EdCat";
+		editorSubcategory = "Stryker_MEU_EdSubCat_Drones";
 		altFullForce = 2500;
 		altNoForce = 5000;
 		maxHeight = 2500;
@@ -110,8 +110,8 @@ class CfgVehicles
 		displayName = "[Stryker] Munin Drone";
 		fuelCapacity = 2000;
 		fuelConsumptionRate = 0.01;
-		editorCategory = "Stryker_EdCat_MEU";
-		editorSubcategory = "Stryker_EdSubCat_Drones";
+		editorCategory = "Stryker_MEU_EdCat";
+		editorSubcategory = "Stryker_MEU_EdSubCat_Drones";
 		radarTargetSize = 0.01;
 		altFullForce = 2500;
 		altNoForce = 5000;

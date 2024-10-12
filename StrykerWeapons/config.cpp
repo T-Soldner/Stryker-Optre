@@ -277,6 +277,23 @@ class CfgWeapons
 		};
 		class FlashLight{};
 	};
+	class Stryker_MA37_ai : Stryker_MA37
+	{
+		_generalMacro = "Stryker_MA37_ai";
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot = "CowsSlot";
+				item = "OPTRE_MA37_Smartlink_Scope";
+			};
+			class LinkedItemsAcc
+			{
+				slot = "PointerSlot";
+				item = "optre_bmr_laser";
+			};
+		};
+	};
 
 	//MA37GL
 	class Stryker_MA37GL : OPTRE_MA37GL
@@ -306,6 +323,23 @@ class CfgWeapons
 			};
 		};
 		class FlashLight {};
+	};
+	class Stryker_MA37GL_ai : Stryker_MA37GL
+	{
+		_generalMacro = "Stryker_MA37GL_ai";
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot = "CowsSlot";
+				item = "OPTRE_MA37_Smartlink_Scope";
+			};
+			class LinkedItemsAcc
+			{
+				slot = "PointerSlot";
+				item = "optre_bmr_laser";
+			};
+		};
 	};
 	
 	//GPMG
@@ -338,6 +372,28 @@ class CfgWeapons
 			class UnderBarrelSlot : UnderBarrelSlot
 			{
 				compatibleitems[] = { "bipod_01_f_blk","bipod_02_f_blk","bipod_03_f_blk" };
+			};
+		};
+	};
+	class Stryker_M247_ai : Stryker_M247
+	{
+		_generalMacro = "Stryker_M247_ai";
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot = "CowsSlot";
+				item = "xm250_scope";
+			};
+			class LinkedItemsAcc
+			{
+				slot = "PointerSlot";
+				item = "optre_bmr_laser";
+			};
+			class LinkedItemsUnder
+			{
+				slot = "UnderBarrelSlot";
+				item = "bipod_01_f_blk";
 			};
 		};
 	};
@@ -376,6 +432,28 @@ class CfgWeapons
 			};
 		};
 	};
+	class Stryker_M392_DMR_ai : Stryker_M392_DMR
+	{
+		_generalMacro = "Stryker_M392_DMR_ai";
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot = "CowsSlot";
+				item = "OPTRE_M393_Scope";
+			};
+			class LinkedItemsAcc
+			{
+				slot = "PointerSlot";
+				item = "optre_bmr_laser";
+			};
+			class LinkedItemsUnder
+			{
+				slot = "UnderBarrelSlot";
+				item = "bipod_01_f_blk";
+			};
+		};
+	};
 
 	//M90
 	class Stryker_M90A : OPTRE_M90A
@@ -406,6 +484,18 @@ class CfgWeapons
 		};
 		hiddenSelections[] = { "camo","camo_reticle" };
 		hiddenSelectionsTextures[] = { "StrykerWeapons\data\Stryker_m90_co.paa","#(argb,8,8,3)color(0.945098,0.215686,0.215686,1.0,co)" };
+	};
+	class Stryker_M90A_ai : Stryker_M90A
+	{
+		_generalMacro = "Stryker_M90A_ai";
+		class LinkedItems
+		{
+			class LinkedItemsAcc
+			{
+				slot = "PointerSlot";
+				item = "optre_m45_flashlight";
+			};
+		};
 	};
 
 	//BR55
@@ -438,6 +528,28 @@ class CfgWeapons
 			class UnderBarrelSlot_rail : UnderBarrelSlot_rail
 			{
 				compatibleitems[] = { "OPTRE_BR45Grip" };
+			};
+		};
+	};
+	class Stryker_BR55_ai : Stryker_BR55
+	{
+		_generalMacro = "Stryker_BR55_ai";
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot = "CowsSlot";
+				item = "MEU_REC_HOLO_DMR";
+			};
+			class LinkedItemsAcc
+			{
+				slot = "PointerSlot";
+				item = "optre_bmr_laser";
+			};
+			class LinkedItemsUnder
+			{
+				slot = "UnderBarrelSlot";
+				item = "OPTRE_BR45Grip";
 			};
 		};
 	};
@@ -480,6 +592,23 @@ class CfgWeapons
 			};
 			class UnderBarrelSlot : UnderBarrelSlot {
 				compatibleitems[] = {};
+			};
+		};
+	};
+	class Stryker_M6G_ai : Stryker_M6G
+	{
+		_generalMacro = "Stryker_M6G_ai";
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot = "CowsSlot";
+				item = "OPTRE_M6G_Scope";
+			};
+			class LinkedItemsAcc
+			{
+				slot = "PointerSlot";
+				item = "OPTRE_M6G_Flashlight";
 			};
 		};
 	};
