@@ -455,7 +455,6 @@ class CfgVehicles
 		scopecurator = 1;
 		displayName = "[Stryker] Urban";
 		picture = "";
-		model = "\Halo_marine_02\Halo_Marine_02_Uniform_F.p3d";
 		uniformClass = "Stryker_U_Base";
 		linkedItems[] = { "ItemMap","ItemCompass","ItemWatch","ItemRadio" };
 	};
@@ -463,9 +462,6 @@ class CfgVehicles
 	//base
 	class Stryker_Woodland: Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Woodland";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Stryker_Woodland_Armor.paa" };
@@ -473,9 +469,6 @@ class CfgVehicles
 	};
 	class Stryker_Corpsman_Woodland : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Woodland Corpsman";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Stryker_Woodland_Armor.paa" };
@@ -483,9 +476,6 @@ class CfgVehicles
 	};
 	class Stryker_Urban : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Urban";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Stryker_Urban_Armor.paa" };
@@ -493,9 +483,6 @@ class CfgVehicles
 	};
 	class Stryker_Corpsman_Urban : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Urban Corpsman";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Urban_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Stryker_Urban_Armor.paa" };
@@ -503,9 +490,6 @@ class CfgVehicles
 	};
 	class Stryker_Arid : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Arid";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_Armor.paa" };
@@ -513,9 +497,6 @@ class CfgVehicles
 	};
 	class Stryker_Corpsman_Arid : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Arid Corpsman";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_Armor.paa" };
@@ -525,9 +506,6 @@ class CfgVehicles
 	//One-A
 	class Stryker_oneA_Woodland : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-A Woodland";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Stryker_Woodland_oneA_Armor.paa" };
@@ -535,9 +513,6 @@ class CfgVehicles
 	};
 	class Stryker_oneA_Corpsman_Woodland : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-A Woodland Corpsman";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Stryker_Woodland_oneA_Armor.paa" };
@@ -545,9 +520,6 @@ class CfgVehicles
 	};
 	class Stryker_oneA_Urban : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-A Urban";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Stryker_Urban_oneA_Armor.paa" };
@@ -555,9 +527,6 @@ class CfgVehicles
 	};
 	class Stryker_oneA_Corpsman_Urban : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-A Urban Corpsman";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Urban_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Stryker_Urban_oneA_Armor.paa" };
@@ -565,9 +534,6 @@ class CfgVehicles
 	};
 	class Stryker_oneA_Arid : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-A Arid";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_oneA_Armor.paa" };
@@ -575,9 +541,6 @@ class CfgVehicles
 	};
 	class Stryker_oneA_Corpsman_Arid : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-A Arid Corpsman";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_oneA_Armor.paa" };
@@ -587,9 +550,6 @@ class CfgVehicles
 	//One-One
 	class Stryker_oneOne_Woodland : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-1 Woodland";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Stryker_Woodland_oneOne_Armor.paa" };
@@ -597,9 +557,6 @@ class CfgVehicles
 	};
 	class Stryker_oneOne_Corpsman_Woodland : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-1 Woodland Corpsman";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Stryker_Woodland_oneOne_Armor.paa" };
@@ -607,9 +564,6 @@ class CfgVehicles
 	};
 	class Stryker_oneOne_Urban : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-1 Urban";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Stryker_Urban_oneOne_Armor.paa" };
@@ -617,9 +571,6 @@ class CfgVehicles
 	};
 	class Stryker_oneOne_Corpsman_Urban : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-1 Urban Corpsman";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Urban_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Stryker_Urban_oneOne_Armor.paa" };
@@ -627,9 +578,6 @@ class CfgVehicles
 	};
 	class Stryker_oneOne_Arid : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-1 Arid";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_oneOne_Armor.paa" };
@@ -637,9 +585,6 @@ class CfgVehicles
 	};
 	class Stryker_oneOne_Corpsman_Arid : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-1 Arid Corpsman";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_oneOne_Armor.paa" };
@@ -649,9 +594,6 @@ class CfgVehicles
 	//One-Two
 	class Stryker_oneTwo_Woodland : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-2 Woodland";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Stryker_Woodland_oneTwo_Armor.paa" };
@@ -659,9 +601,6 @@ class CfgVehicles
 	};
 	class Stryker_oneTwo_Corpsman_Woodland : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-2 Woodland Corpsman";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Stryker_Woodland_oneTwo_Armor.paa" };
@@ -669,9 +608,6 @@ class CfgVehicles
 	};
 	class Stryker_oneTwo_Urban : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-2 Urban";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Stryker_Urban_oneTwo_Armor.paa" };
@@ -679,9 +615,6 @@ class CfgVehicles
 	};
 	class Stryker_oneTwo_Corpsman_Urban : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-2 Urban Corpsman";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Urban_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Stryker_Urban_oneTwo_Armor.paa" };
@@ -689,9 +622,6 @@ class CfgVehicles
 	};
 	class Stryker_oneTwo_Arid : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-2 Arid";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_oneTwo_Armor.paa" };
@@ -699,9 +629,6 @@ class CfgVehicles
 	};
 	class Stryker_oneTwo_Corpsman_Arid : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-2 Arid Corpsman";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_oneTwo_Armor.paa" };
@@ -711,9 +638,6 @@ class CfgVehicles
 	//One-Three
 	class Stryker_oneThree_Woodland : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-3 Woodland";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Stryker_Woodland_oneThree_Armor.paa" };
@@ -721,9 +645,6 @@ class CfgVehicles
 	};
 	class Stryker_oneThree_Corpsman_Woodland : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-3 Woodland Corpsman";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Woodland_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Stryker_Woodland_oneThree_Armor.paa" };
@@ -731,9 +652,6 @@ class CfgVehicles
 	};
 	class Stryker_oneThree_Urban : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-3 Urban";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Stryker_Urban_oneThree_Armor.paa" };
@@ -741,9 +659,6 @@ class CfgVehicles
 	};
 	class Stryker_oneThree_Corpsman_Urban : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-3 Urban Corpsman";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Urban_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Stryker_Urban_oneThree_Armor.paa" };
@@ -751,9 +666,6 @@ class CfgVehicles
 	};
 	class Stryker_oneThree_Arid : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-3 Arid";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_oneThree_Armor.paa" };
@@ -761,9 +673,6 @@ class CfgVehicles
 	};
 	class Stryker_oneThree_Corpsman_Arid : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] 1-3 Arid Corpsman";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Stryker_Arid_Corpsman_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_oneThree_Armor.paa" };
@@ -774,9 +683,6 @@ class CfgVehicles
 	//Soldner
 	class Soldner_Woodland : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Soldner's Woodland";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Soldner_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Soldner_Woodland_Armor.paa" };
@@ -784,9 +690,6 @@ class CfgVehicles
 	};
 	class Soldner_Urban : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Soldner's Urban";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Soldner_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Soldner_Urban_Armor.paa" };
@@ -794,9 +697,6 @@ class CfgVehicles
 	};
 	class Soldner_Arid : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Soldner's Arid";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Soldner_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Soldner_Arid_Armor.paa" };
@@ -806,9 +706,6 @@ class CfgVehicles
 	//Havoc
 	class Havoc_Woodland : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Havoc's Woodland";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Havoc_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Havoc_Woodland_Armor.paa" };
@@ -816,9 +713,6 @@ class CfgVehicles
 	};
 	class Havoc_Urban : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Havoc's Urban";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Havoc_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Havoc_Urban_Armor.paa" };
@@ -826,9 +720,6 @@ class CfgVehicles
 	};
 	class Havoc_Arid : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Havoc's Arid";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Havoc_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Havoc_Arid_Armor.paa" };
@@ -838,9 +729,6 @@ class CfgVehicles
 	//Saunder
 	class Saunder_Woodland : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Saunder's Woodland";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Saunder_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Saunder_Woodland_Armor.paa" };
@@ -848,9 +736,6 @@ class CfgVehicles
 	};
 	class Saunder_Urban : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Saunder's Urban";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Saunder_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Saunder_Urban_Armor.paa" };
@@ -858,9 +743,6 @@ class CfgVehicles
 	};
 	class Saunder_Arid : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Saunder's Arid";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Saunder_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Saunder_Arid_Armor.paa" };
@@ -870,9 +752,6 @@ class CfgVehicles
 	//Fangirl
 	class Fangirl_Woodland : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Fangirl's Woodland";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Fangirl_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Fangirl_Woodland_Armor.paa" };
@@ -880,9 +759,6 @@ class CfgVehicles
 	};
 	class Fangirl_Urban : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Fangirl's Urban";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Fangirl_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Fangirl_Urban_Armor.paa" };
@@ -890,9 +766,6 @@ class CfgVehicles
 	};
 	class Fangirl_Arid : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Fangirl's Arid";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Fangirl_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Fangirl_Arid_Armor.paa" };
@@ -902,9 +775,6 @@ class CfgVehicles
 	//Aturr
 	class Aturr_Woodland : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Aturr's Woodland";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Aturr_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Aturr_Woodland_Armor.paa" };
@@ -912,9 +782,6 @@ class CfgVehicles
 	};
 	class Aturr_Urban : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Aturr's Urban";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Aturr_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Aturr_Urban_Armor.paa" };
@@ -922,9 +789,6 @@ class CfgVehicles
 	};
 	class Aturr_Arid : Stryker_Base
 	{
-		scope = 2;
-		scopearsenal = 2;
-		scopecurator = 2;
 		displayName = "[Stryker] Aturr's Arid";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Aturr_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Aturr_Arid_Armor.paa" };
