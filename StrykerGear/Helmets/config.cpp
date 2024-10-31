@@ -92,7 +92,7 @@ class XtdGearModels
 			{
 				alwaysSelectable = 1;
 				label = "Owner";
-				values[] = { "Soldner","Havoc","Saunder","Marshall","Fangirl","Reject","Greene","Ishra","Ksiazek","Sabbath","Aturr"};
+				values[] = { "Soldner","Havoc","Saunder","Marshall","Fangirl","Reject","Greene","Ishra","Ksiazek","Sabbath","Aturr","Timber"};
 				class Soldner
 				{
 					label = "Soldner";
@@ -136,6 +136,10 @@ class XtdGearModels
 				class Aturr
 				{
 					label = "Aturr";
+				};
+				class Timber
+				{
+					label = "Timber";
 				};
 			};
 			class visor
@@ -727,6 +731,50 @@ class XtdGearInfos
 			owner = "Aturr";
 			visor = "yes";
 		};
+
+		//Timber
+		class Timber_Woodland_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "woodland";
+			owner = "Timber";
+			visor = "no";
+		};
+		class Timber_Woodland_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "woodland";
+			owner = "Timber";
+			visor = "yes";
+		};
+		class Timber_Urban_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "urban";
+			owner = "Timber";
+			visor = "no";
+		};
+		class Timber_Urban_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "urban";
+			owner = "Timber";
+			visor = "yes";
+		};
+		class Timber_Arid_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "arid";
+			owner = "Timber";
+			visor = "no";
+		};
+		class Timber_Arid_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "arid";
+			owner = "Timber";
+			visor = "yes";
+		};
 	};
 };
 class cfgWeapons
@@ -1315,5 +1363,49 @@ class cfgWeapons
 		displayName = "[Stryker] UNSC Arid CH252 (Aturr)";
 		hiddenSelections[] = { "Camo1" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Aturr_Arid_Helmet.paa" };
+	};
+
+	//Timber
+	class Timber_Woodland_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Woodland CH252 (Timber/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Timber_Woodland_Helmet.paa" };
+	};
+	class Timber_Woodland_Helmet : Stryker_Base_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Woodland CH252 (Timber)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Timber_Woodland_Helmet.paa" };
+	};
+	class Timber_Urban_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Urban CH252 (Timber/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Timber_Urban_Helmet.paa" };
+	};
+	class Timber_Urban_Helmet : Stryker_Base_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Urban CH252 (Timber)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Timber_Urban_Helmet.paa" };
+	};
+	class Timber_Arid_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Arid CH252 (Timber/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Timber_Arid_Helmet.paa" };
+	};
+	class Timber_Arid_Helmet : Stryker_Base_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Arid CH252 (Timber)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Timber_Arid_Helmet.paa" };
 	};
 };
