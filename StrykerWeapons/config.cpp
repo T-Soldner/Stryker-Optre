@@ -75,7 +75,7 @@ class XtdGearModels
 			{
 				alwaysSelectable = 1;
 				label = "Owner";
-				values[] = {"Soldner","Sabbath","Ishra","Havoc","Wizard","Aturr"};
+				values[] = {"Soldner","Sabbath","Ishra","Havoc","Wizard","Aturr","Grimshaw"};
 				class Soldner
 				{
 					label = "Soldner";
@@ -99,6 +99,10 @@ class XtdGearModels
 				class Aturr
 				{
 					label = "Aturr";
+				};
+				class Grimshaw
+				{
+					label = "Grimshaw";
 				};
 			};
 		};
@@ -168,6 +172,10 @@ class XtdGearInfos
 		class Stryker_Aturr_BR55 {
 			model = "Stryker_personal_weapons";
 			type = "Aturr";
+		};
+		class Stryker_Grimshaw_MA37 {
+			model = "Stryker_personal_weapons";
+			type = "Grimshaw";
 		};
 	};
 };
@@ -718,6 +726,15 @@ class CfgWeapons
 		baseWeapon = "Stryker_Ishra_M90A";
 		hiddenSelections[] = { "camo","camo_reticle" };
 		hiddenSelectionsTextures[] = { "StrykerWeapons\data\Ishra_m90_co.paa","#(argb,8,8,3)color(0.945098,0.215686,0.215686,1.0,co)"};
+	};
+
+	//Grimshaw MA37
+	class Stryker_Grimshaw_MA37 : Stryker_MA37
+	{
+		baseWeapon = "Stryker_Grimshaw_MA37";
+		displayName = "[Stryker] Grimshaw's MA37";
+		hiddenSelections[] = { "camo","camo1" };
+		hiddenSelectionsTextures[] = { "StrykerWeapons\data\Grimshaw_ma37_co.paa","StrykerWeapons\data\Grimshaw_ammocounter37_co.paa" };
 	};
 };
 
