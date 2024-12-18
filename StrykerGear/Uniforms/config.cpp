@@ -1,12 +1,24 @@
 class CfgPatches
 {
-	class Stryker_UNSC_Marine
+	class Stryker_Gear_Uniforms
 	{
+		// Meta information for editor
+		name = "Stryker Aux Mod";
 		author = "Soldner";
+		url = "https://discord.gg/Y6AtjkfaEW";
+
+		// Minimum compatible version. When the game's version is lower, pop-up warning will appear when launching the game. Note: was disabled on purpose some time late into Arma 2: OA.
+		requiredVersion = 1.60;
+		// Required addons, used for setting load order. (CfgPatches classname NOT PBO filename!)
+		// When any of the addons are missing, a pop-up warning will appear when launching the game.
+		requiredAddons[] = { "A3_Data_F_Decade_Loadorder" };
+		// List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content (units and groups) unlocking.
 		units[] = {};
+		// List of weapons (CfgWeapons classes) contained in the addon.
 		weapons[] = {};
-		requiredVersion = 0.1;
-		requiredAddons[] = {"A3_Characters_F","OPTRE_Core"};
+
+		// Optional. If this is 1, if any of requiredAddons[] entry is missing in your game the entire config will be ignored and return no error (but in rpt) so useful to make a compat Mod (Since Arma 3 2.14)
+		skipWhenMissingDependencies = 1;
 	};
 };
 class XtdGearModels
@@ -103,30 +115,33 @@ class XtdGearModels
 			{
 				alwaysSelectable = 1;
 				label = "Owner";
-				values[] = { "Soldner","Havoc","Saunder","Fangirl","Marshall","Timber"};
-				class Soldner
-				{
+				values[] = { "Soldner","Havoc","Saunder","Fangirl","Marshall","Timber","Reject","Wolf","Milkshake"};
+				class Soldner {
 					label = "Soldner";
 				};
-				class Havoc
-				{
+				class Havoc {
 					label = "Havoc";
 				};
-				class Saunder
-				{
+				class Saunder {
 					label = "Saunder";
 				};
-				class Fangirl
-				{
+				class Fangirl {
 					label = "Fangirl";
 				};
-				class Marshall
-				{
+				class Marshall {
 					label = "Marshall";
 				};
-				class Timber
-				{
+				class Timber {
 					label = "Timber";
+				};
+				class Reject {
+					label = "Reject";
+				};
+				class Wolf {
+					label = "Wolf";
+				};
+				class Milkshake {
+					label = "Milkshake";
 				};
 			};
 		};
@@ -466,6 +481,66 @@ class XtdGearInfos
 			model = "Stryker_Custom_Uniforms";
 			camo = "arid";
 			owner = "Timber";
+		};
+
+		//Reject
+		class Stryker_U_Reject_Woodland_uniform
+		{
+			model = "Stryker_Custom_Uniforms";
+			camo = "woodland";
+			owner = "Reject";
+		};
+		class Stryker_U_Reject_Urban_uniform
+		{
+			model = "Stryker_Custom_Uniforms";
+			camo = "urban";
+			owner = "Reject";
+		};
+		class Stryker_U_Reject_Arid_uniform
+		{
+			model = "Stryker_Custom_Uniforms";
+			camo = "arid";
+			owner = "Reject";
+		};
+
+		//Wolf
+		class Stryker_U_Wolf_Woodland_uniform
+		{
+			model = "Stryker_Custom_Uniforms";
+			camo = "woodland";
+			owner = "Wolf";
+		};
+		class Stryker_U_Wolf_Urban_uniform
+		{
+			model = "Stryker_Custom_Uniforms";
+			camo = "urban";
+			owner = "Wolf";
+		};
+		class Stryker_U_Wolf_Arid_uniform
+		{
+			model = "Stryker_Custom_Uniforms";
+			camo = "arid";
+			owner = "Wolf";
+		};
+
+		//Milkshake
+		class Stryker_U_Milkshake_Woodland_uniform
+		{
+			model = "Stryker_Custom_Uniforms";
+			camo = "woodland";
+			owner = "Milkshake";
+		};
+		class Stryker_U_Milkshake_Urban_uniform
+		{
+			model = "Stryker_Custom_Uniforms";
+			camo = "urban";
+			owner = "Milkshake";
+		};
+		class Stryker_U_Milkshake_Arid_uniform
+		{
+			model = "Stryker_Custom_Uniforms";
+			camo = "arid";
+			owner = "Milkshake";
 		};
 	};
 };
@@ -824,22 +899,91 @@ class CfgVehicles
 	{
 		displayName = "[Stryker] Timber's Woodland";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Timber_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Stryker_Woodland_oneThree_Armor.paa" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Timber_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Stryker_Woodland_oneTwo_Armor.paa" };
 		uniformClass = "Stryker_U_Timber_Woodland_uniform";
 	};
 	class Timber_Urban : Stryker_Base
 	{
 		displayName = "[Stryker] Timber's Urban";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Timber_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Stryker_Urban_oneThree_Armor.paa" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Timber_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Stryker_Urban_oneTwo_Armor.paa" };
 		uniformClass = "Stryker_U_Timber_Urban_uniform";
 	};
 	class Timber_Arid : Stryker_Base
 	{
 		displayName = "[Stryker] Timber's Arid";
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Timber_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_oneThree_Armor.paa" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Timber_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_oneTwo_Armor.paa" };
 		uniformClass = "Stryker_U_Timber_Arid_uniform";
+	};
+
+	//Reject
+	class Reject_Woodland : Stryker_Base
+	{
+		displayName = "[Stryker] Reject's Woodland";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Reject_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Stryker_Woodland_oneTwo_Armor.paa" };
+		uniformClass = "Stryker_U_Reject_Woodland_uniform";
+	};
+	class Reject_Urban : Stryker_Base
+	{
+		displayName = "[Stryker] Reject's Urban";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Reject_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Stryker_Urban_oneTwo_Armor.paa" };
+		uniformClass = "Stryker_U_Reject_Urban_uniform";
+	};
+	class Reject_Arid : Stryker_Base
+	{
+		displayName = "[Stryker] Reject's Arid";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Reject_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Stryker_Arid_oneTwo_Armor.paa" };
+		uniformClass = "Stryker_U_Reject_Arid_uniform";
+	};
+
+	//Wolf
+	class Wolf_Woodland : Stryker_Base
+	{
+		displayName = "[Stryker] Wolf's Woodland";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Wolf_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Wolf_Woodland_Armor.paa" };
+		uniformClass = "Stryker_U_Wolf_Woodland_uniform";
+	};
+	class Wolf_Urban : Stryker_Base
+	{
+		displayName = "[Stryker] Wolf's Urban";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Wolf_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Wolf_Urban_Armor.paa" };
+		uniformClass = "Stryker_U_Wolf_Urban_uniform";
+	};
+	class Wolf_Arid : Stryker_Base
+	{
+		displayName = "[Stryker] Wolf's Arid";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Wolf_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Wolf_Arid_Armor.paa" };
+		uniformClass = "Stryker_U_Wolf_Arid_uniform";
+	};
+
+	//Milkshake
+	class Milkshake_Woodland : Stryker_Base
+	{
+		displayName = "[Stryker] Milkshake's Woodland";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Milkshake_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Milkshake_Woodland_Armor.paa" };
+		uniformClass = "Stryker_U_Milkshake_Woodland_uniform";
+	};
+	class Milkshake_Urban : Stryker_Base
+	{
+		displayName = "[Stryker] Milkshake's Urban";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Milkshake_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Milkshake_Urban_Armor.paa" };
+		uniformClass = "Stryker_U_Milkshake_Urban_uniform";
+	};
+	class Milkshake_Arid : Stryker_Base
+	{
+		displayName = "[Stryker] Milkshake's Arid";
+		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Milkshake_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Milkshake_Arid_Armor.paa" };
+		uniformClass = "Stryker_U_Milkshake_Arid_uniform";
 	};
 };
 class cfgWeapons
@@ -1463,6 +1607,120 @@ class cfgWeapons
 		class ItemInfo : UniformItem
 		{
 			uniformClass = "Timber_Arid";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+
+	//Reject
+	class Stryker_U_Reject_Woodland_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] Reject's Woodland";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Reject_Woodland";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+	class Stryker_U_Reject_Urban_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] Reject's Urban";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Reject_Urban";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+	class Stryker_U_Reject_Arid_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] Reject's Arid";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Reject_Arid";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+
+	//Wolf
+	class Stryker_U_Wolf_Woodland_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] Wolf's Woodland";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Wolf_Woodland";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+	class Stryker_U_Wolf_Urban_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] Wolf's Urban";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Wolf_Urban";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+	class Stryker_U_Wolf_Arid_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] Wolf's Arid";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Wolf_Arid";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+
+	//Milkshake
+	class Stryker_U_Milkshake_Woodland_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] Milkshake's Woodland";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Milkshake_Woodland";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+	class Stryker_U_Milkshake_Urban_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] Milkshake's Urban";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Milkshake_Urban";
+			containerClass = "Supply100";
+			uniformType = "Neopren";
+		};
+	};
+	class Stryker_U_Milkshake_Arid_uniform : Stryker_U_Base
+	{
+		scope = 2;
+		allowedSlots[] = { 901 };
+		displayName = "[Stryker] Milkshake's Arid";
+		class ItemInfo : UniformItem
+		{
+			uniformClass = "Milkshake_Arid";
 			containerClass = "Supply100";
 			uniformType = "Neopren";
 		};

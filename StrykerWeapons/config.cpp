@@ -1,14 +1,24 @@
 class CfgPatches
 {
-	class StrykerWeapons
+	class Stryker_Weapons
 	{
+		// Meta information for editor
+		name = "Stryker Aux Mod";
 		author = "Soldner";
-		hideName = 0;
+		url = "https://discord.gg/Y6AtjkfaEW";
+
+		// Minimum compatible version. When the game's version is lower, pop-up warning will appear when launching the game. Note: was disabled on purpose some time late into Arma 2: OA.
+		requiredVersion = 1.60;
+		// Required addons, used for setting load order. (CfgPatches classname NOT PBO filename!)
+		// When any of the addons are missing, a pop-up warning will appear when launching the game.
+		requiredAddons[] = { "A3_Data_F_Decade_Loadorder" };
+		// List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content (units and groups) unlocking.
 		units[] = {};
+		// List of weapons (CfgWeapons classes) contained in the addon.
 		weapons[] = {};
-		magazines[]={};
-		requiredVersion = 0.1;
-		requiredAddons[] = {};
+
+		// Optional. If this is 1, if any of requiredAddons[] entry is missing in your game the entire config will be ignored and return no error (but in rpt) so useful to make a compat Mod (Since Arma 3 2.14)
+		skipWhenMissingDependencies = 1;
 	};
 };
 
@@ -277,7 +287,7 @@ class CfgWeapons
 				compatibleitems[] = { "optre_ma5suppressor" };
 			};
 			class PointerSlot : PointerSlot {
-				compatibleitems[] = { "OPTRE_M7_Flashlight","OPTRE_M7_Laser","OPTRE_M7_Vis_Red_Laser","OPTRE_BMR_Laser","OPTRE_BMR_Vis_Red_Laser","optre_m12_laser","OPTRE_M12_Vis_Red_Laser","optre_m45_flashlight","optre_m45_flashlight_red","OPTRE_M6C_Laser","OPTRE_M6C_Vis_Red_Laser","OPTRE_M6G_Laser","OPTRE_M6G_Vis_Red_Laser","acc_pointer_ir","ace_acc_pointer_green","acc_pointer_vis_red","MEU_M12_Vis_Laser","MEU_BMR_Vis_Laser","MEU_M7_Vis_Laser","MEU_M6G_Laser" };
+				compatibleitems[] = { "OPTRE_M7_Flashlight","OPTRE_M7_Laser","OPTRE_BMR_Laser","optre_m12_laser","optre_m45_flashlight","optre_m45_flashlight_red","OPTRE_M6C_Laser","OPTRE_M6G_Laser","acc_pointer_ir","ace_acc_pointer_green","MEU_M6G_Laser" };
 			};
 			class UnderBarrelSlot_rail : UnderBarrelSlot_rail {
 				compatibleitems[] = {};
@@ -323,7 +333,7 @@ class CfgWeapons
 				compatibleitems[] = { "optre_ma5suppressor" };
 			};
 			class PointerSlot : PointerSlot {
-				compatibleitems[] = { "OPTRE_M7_Flashlight","OPTRE_M7_Laser","OPTRE_M7_Vis_Red_Laser","OPTRE_BMR_Laser","OPTRE_BMR_Vis_Red_Laser","optre_m12_laser","OPTRE_M12_Vis_Red_Laser","optre_m45_flashlight","optre_m45_flashlight_red","OPTRE_M6C_Laser","OPTRE_M6C_Vis_Red_Laser","OPTRE_M6G_Laser","OPTRE_M6G_Vis_Red_Laser","acc_pointer_ir","ace_acc_pointer_green","acc_pointer_vis_red","MEU_M12_Vis_Laser","MEU_BMR_Vis_Laser","MEU_M7_Vis_Laser","MEU_M6G_Laser" };
+				compatibleitems[] = { "OPTRE_M7_Flashlight","OPTRE_M7_Laser","OPTRE_BMR_Laser","optre_m12_laser","optre_m45_flashlight","optre_m45_flashlight_red","OPTRE_M6C_Laser","OPTRE_M6G_Laser","acc_pointer_ir","ace_acc_pointer_green","MEU_M6G_Laser" };
 			};
 			class UnderBarrelSlot : UnderBarrelSlot
 			{
@@ -487,7 +497,7 @@ class CfgWeapons
 			};
 			class PointerSlot : PointerSlot
 			{
-				compatibleitems[] = { "OPTRE_BMR_Laser","OPTRE_BMR_MEQ_Flashlight","OPTRE_BMR_Vis_Red_Laser","optre_m12_laser","OPTRE_M12_Vis_Red_Laser","OPTRE_M12_Flashlight","optre_m45_flashlight","optre_m45_flashlight_red","OPTRE_M6C_Flashlight","OPTRE_M6G_Laser","OPTRE_M6G_Vis_Red_Laser","acc_pointer_ir","acc_flashlight","ace_acc_pointer_green","acc_pointer_vis_red","MEU_M12_Vis_Laser","MEU_BMR_Vis_Laser", };
+				compatibleitems[] = { "OPTRE_BMR_Laser","OPTRE_BMR_MEQ_Flashlight","optre_m12_laser","OPTRE_M12_Flashlight","optre_m45_flashlight","optre_m45_flashlight_red","OPTRE_M6C_Flashlight","OPTRE_M6G_Laser","acc_pointer_ir","acc_flashlight","ace_acc_pointer_green" };
 			};
 		};
 		hiddenSelections[] = { "camo","camo_reticle" };

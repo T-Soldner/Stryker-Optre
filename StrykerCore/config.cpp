@@ -1,21 +1,27 @@
-#define _ARMA_
-
 class CfgPatches
 {
 	class Stryker_Core
 	{
-		author = "Stryker Mod Team";
-		name = "Stryker Mod Core";
+		// Meta information for editor
+		name = "Stryker Aux Mod";
+		author = "Soldner";
 		url = "https://discord.gg/Y6AtjkfaEW";
-		units[] = {""};
-		weapons[] = {};
-		magazines[] = {};
-		ammo[] = {};
-		requiredVersion = 0.1;
+
+		// Minimum compatible version. When the game's version is lower, pop-up warning will appear when launching the game. Note: was disabled on purpose some time late into Arma 2: OA.
+		requiredVersion = 1.60;
+		// Required addons, used for setting load order. (CfgPatches classname NOT PBO filename!)
+		// When any of the addons are missing, a pop-up warning will appear when launching the game.
 		requiredAddons[] = {
 			"1st_MEU_patch_main_loadingScreens"
 			// we dont actually extend anything from 1MEU, this is just to ensure our loading screen overwrites theirs
 		};
+		// List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content (units and groups) unlocking.
+		units[] = {};
+		// List of weapons (CfgWeapons classes) contained in the addon.
+		weapons[] = {};
+
+		// Optional. If this is 1, if any of requiredAddons[] entry is missing in your game the entire config will be ignored and return no error (but in rpt) so useful to make a compat Mod (Since Arma 3 2.14)
+		skipWhenMissingDependencies = 1;
 	};
 };
 class CfgMods
@@ -50,6 +56,18 @@ class CfgEditorSubcategories
 	class Stryker_MEU_EdSubCat_Men
 	{
 		displayName = "Infantry";
+	};
+	class Stryker_MEU_EdSubCat_Cars
+	{
+		displayName = "Cars";
+	};
+	class Stryker_MEU_EdSubCat_Armored
+	{
+		displayName = "Armored";
+	};
+	class Stryker_MEU_EdSubCat_Rotary
+	{
+		displayName = "Rotary";
 	};
 	class Stryker_MEU_EdSubCat_Drones
 	{
