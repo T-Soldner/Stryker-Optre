@@ -292,8 +292,8 @@ class CfgVehicles
 	};
 
 	//Falcon
-	class OPTRE_UNSC_UH_144S_Falcon_DAP;
-	class Stryker_UH_Falcon : OPTRE_UNSC_UH_144S_Falcon_DAP {
+	class OPTRE_UNSC_falcon_armed;
+	class Stryker_UH_Falcon : OPTRE_UNSC_falcon_armed {
 		displayName = "[Stryker] UH-144";
 		author = "Soldner";
 		scope = 2;

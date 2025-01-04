@@ -104,7 +104,7 @@ class XtdGearModels
 			{
 				alwaysSelectable = 1;
 				label = "Owner";
-				values[] = { "Soldner","Havoc","Saunder","Marshall","Fangirl","Reject","Greene","Ishra","Ksiazek","Sabbath","Timber","Ironsides","Trix","Wolf","Fitzsimmons","Milkshake"};
+				values[] = { "Soldner","Havoc","Saunder","Marshall","Fangirl","Reject","Greene","Ishra","Ksiazek","Sabbath","Timber","Ironsides","Trix","Wolf","Fitzsimmons","Milkshake","Vyke","Aturr"};
 				class Soldner {
 					label = "Soldner";
 				};
@@ -152,6 +152,12 @@ class XtdGearModels
 				};
 				class Milkshake {
 					label = "Milkshake";
+				};
+				class Vyke {
+					label = "Vyke";
+				};
+				class Aturr {
+					label = "Aturr";
 				};
 			};
 			class visor
@@ -963,6 +969,94 @@ class XtdGearInfos
 			owner = "Milkshake";
 			visor = "yes";
 		};
+
+		//Vyke
+		class Vyke_Woodland_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "woodland";
+			owner = "Vyke";
+			visor = "no";
+		};
+		class Vyke_Woodland_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "woodland";
+			owner = "Vyke";
+			visor = "yes";
+		};
+		class Vyke_Urban_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "urban";
+			owner = "Vyke";
+			visor = "no";
+		};
+		class Vyke_Urban_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "urban";
+			owner = "Vyke";
+			visor = "yes";
+		};
+		class Vyke_Arid_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "arid";
+			owner = "Vyke";
+			visor = "no";
+		};
+		class Vyke_Arid_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "arid";
+			owner = "Vyke";
+			visor = "yes";
+		};
+
+		//Aturr
+		class Aturr_Woodland_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "woodland";
+			owner = "Aturr";
+			visor = "no";
+		};
+		class Aturr_Woodland_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "woodland";
+			owner = "Aturr";
+			visor = "yes";
+		};
+		class Aturr_Urban_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "urban";
+			owner = "Aturr";
+			visor = "no";
+		};
+		class Aturr_Urban_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "urban";
+			owner = "Aturr";
+			visor = "yes";
+		};
+		class Aturr_Arid_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "arid";
+			owner = "Aturr";
+			visor = "no";
+		};
+		class Aturr_Arid_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "arid";
+			owner = "Aturr";
+			visor = "yes";
+		};
 	};
 };
 class cfgWeapons
@@ -1771,5 +1865,93 @@ class cfgWeapons
 		displayName = "[Stryker] UNSC Arid CH252 (Milkshake)";
 		hiddenSelections[] = { "Camo1" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Milkshake_Arid_Helmet.paa" };
+	};
+
+	//Vyke
+	class Vyke_Woodland_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Woodland CH252 (Vyke/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Vyke_Woodland_Helmet.paa" };
+	};
+	class Vyke_Woodland_Helmet : Stryker_Base_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Woodland CH252 (Vyke)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Vyke_Woodland_Helmet.paa" };
+	};
+	class Vyke_Urban_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Urban CH252 (Vyke/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Vyke_Urban_Helmet.paa" };
+	};
+	class Vyke_Urban_Helmet : Stryker_Base_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Urban CH252 (Vyke)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Vyke_Urban_Helmet.paa" };
+	};
+	class Vyke_Arid_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Arid CH252 (Vyke/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Vyke_Arid_Helmet.paa" };
+	};
+	class Vyke_Arid_Helmet : Stryker_Base_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Arid CH252 (Vyke)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Vyke_Arid_Helmet.paa" };
+	};
+
+	//Aturr
+	class Aturr_Woodland_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Woodland CH252 (Aturr/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Aturr_Woodland_Helmet.paa" };
+	};
+	class Aturr_Woodland_Helmet : Stryker_Base_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Woodland CH252 (Aturr)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Aturr_Woodland_Helmet.paa" };
+	};
+	class Aturr_Urban_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Urban CH252 (Aturr/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Aturr_Urban_Helmet.paa" };
+	};
+	class Aturr_Urban_Helmet : Stryker_Base_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Urban CH252 (Aturr)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Aturr_Urban_Helmet.paa" };
+	};
+	class Aturr_Arid_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Arid CH252 (Aturr/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Aturr_Arid_Helmet.paa" };
+	};
+	class Aturr_Arid_Helmet : Stryker_Base_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Arid CH252 (Aturr)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Aturr_Arid_Helmet.paa" };
 	};
 };

@@ -147,7 +147,7 @@ class RscDisplayLoading
 					y="SafeZoneY";
 					h="SafeZoneH";
 					w="SafeZoneW";
-					text="\StrykerCore\textures\Stryker2.paa";
+					text = "\StrykerCore\textures\Stryker1.paa";
 				};
 			};
 		};
@@ -162,37 +162,7 @@ class RscDisplayLoading
 					y="SafeZoneY";
 					h="SafeZoneH";
 					w="SafeZoneW";
-					text="\StrykerCore\textures\Stryker2.paa";
-				};
-			};
-		};
-		class Loading_West3 : LoadingOne
-		{
-			class controls
-			{
-				class LoadingPic
-				{
-					idc = 1;
-					x = "SafeZoneX";
-					y = "SafeZoneY";
-					h = "SafeZoneH";
-					w = "SafeZoneW";
-					text = "\StrykerCore\textures\Stryker3.paa";
-				};
-			};
-		};
-		class Loading_West4 : LoadingOne
-		{
-			class controls
-			{
-				class LoadingPic
-				{
-					idc = 1;
-					x = "SafeZoneX";
-					y = "SafeZoneY";
-					h = "SafeZoneH";
-					w = "SafeZoneW";
-					text = "\StrykerCore\textures\Stryker4.paa";
+					text = "\StrykerCore\textures\Stryker1.paa";
 				};
 			};
 		};
@@ -222,37 +192,7 @@ class RscDisplayLoading
 					y="SafeZoneY";
 					h="SafeZoneH";
 					w="SafeZoneW";
-					text="\StrykerCore\textures\Stryker2.paa";
-				};
-			};
-		};
-		class Loading_East3 : LoadingOne
-		{
-			class controls
-			{
-				class LoadingPic
-				{
-					idc = 1;
-					x = "SafeZoneX";
-					y = "SafeZoneY";
-					h = "SafeZoneH";
-					w = "SafeZoneW";
-					text = "\StrykerCore\textures\Stryker3.paa";
-				};
-			};
-		};
-		class Loading_East4 : LoadingOne
-		{
-			class controls
-			{
-				class LoadingPic
-				{
-					idc = 1;
-					x = "SafeZoneX";
-					y = "SafeZoneY";
-					h = "SafeZoneH";
-					w = "SafeZoneW";
-					text = "\StrykerCore\textures\Stryker4.paa";
+					text = "\StrykerCore\textures\Stryker1.paa";
 				};
 			};
 		};
