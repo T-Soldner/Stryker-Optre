@@ -104,18 +104,12 @@ class XtdGearModels
 			{
 				alwaysSelectable = 1;
 				label = "Owner";
-				values[] = { "Soldner","Havoc","Saunder","Marshall","Fangirl","Reject","Greene","Ishra","Ksiazek","Sabbath","Timber","Ironsides","Trix","Wolf","Fitzsimmons","Milkshake","Vyke","Aturr"};
+				values[] = { "Soldner","Havoc","Fangirl","Reject","Greene","Ishra","Ksiazek","Sabbath","Timber","Ironsides","Trix","Wolf","Fitzsimmons","Milkshake","Vyke","Aturr","Lancer"};
 				class Soldner {
 					label = "Soldner";
 				};
 				class Havoc {
 					label = "Havoc";
-				};
-				class Saunder {
-					label = "Saunder";
-				};
-				class Marshall {
-					label = "Marshall";
 				};
 				class Fangirl {
 					label = "Fangirl";
@@ -158,6 +152,9 @@ class XtdGearModels
 				};
 				class Aturr {
 					label = "Aturr";
+				};
+				class Lancer {
+					label = "Lancer";
 				};
 			};
 			class visor
@@ -351,94 +348,6 @@ class XtdGearInfos
 			model = "Stryker_Custom_Helmets";
 			camo = "arid";
 			owner = "Havoc";
-			visor = "yes";
-		};
-
-		//Saunder
-		class Saunder_Woodland_NV_Helmet
-		{
-			model = "Stryker_Custom_Helmets";
-			camo = "woodland";
-			owner = "Saunder";
-			visor = "no";
-		};
-		class Saunder_Woodland_Helmet
-		{
-			model = "Stryker_Custom_Helmets";
-			camo = "woodland";
-			owner = "Saunder";
-			visor = "yes";
-		};
-		class Saunder_Urban_NV_Helmet
-		{
-			model = "Stryker_Custom_Helmets";
-			camo = "urban";
-			owner = "Saunder";
-			visor = "no";
-		};
-		class Saunder_Urban_Helmet
-		{
-			model = "Stryker_Custom_Helmets";
-			camo = "urban";
-			owner = "Saunder";
-			visor = "yes";
-		};
-		class Saunder_Arid_NV_Helmet
-		{
-			model = "Stryker_Custom_Helmets";
-			camo = "arid";
-			owner = "Saunder";
-			visor = "no";
-		};
-		class Saunder_Arid_Helmet
-		{
-			model = "Stryker_Custom_Helmets";
-			camo = "arid";
-			owner = "Saunder";
-			visor = "yes";
-		};
-
-		//Marshall
-		class Marshall_Woodland_NV_Helmet
-		{
-			model = "Stryker_Custom_Helmets";
-			camo = "woodland";
-			owner = "Marshall";
-			visor = "no";
-		};
-		class Marshall_Woodland_Helmet
-		{
-			model = "Stryker_Custom_Helmets";
-			camo = "woodland";
-			owner = "Marshall";
-			visor = "yes";
-		};
-		class Marshall_Urban_NV_Helmet
-		{
-			model = "Stryker_Custom_Helmets";
-			camo = "urban";
-			owner = "Marshall";
-			visor = "no";
-		};
-		class Marshall_Urban_Helmet
-		{
-			model = "Stryker_Custom_Helmets";
-			camo = "urban";
-			owner = "Marshall";
-			visor = "yes";
-		};
-		class Marshall_Arid_NV_Helmet
-		{
-			model = "Stryker_Custom_Helmets";
-			camo = "arid";
-			owner = "Marshall";
-			visor = "no";
-		};
-		class Marshall_Arid_Helmet
-		{
-			model = "Stryker_Custom_Helmets";
-			camo = "arid";
-			owner = "Marshall";
 			visor = "yes";
 		};
 
@@ -1057,6 +966,50 @@ class XtdGearInfos
 			owner = "Aturr";
 			visor = "yes";
 		};
+
+		//Lancer
+		class Lancer_Woodland_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "woodland";
+			owner = "Lancer";
+			visor = "no";
+		};
+		class Lancer_Woodland_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "woodland";
+			owner = "Lancer";
+			visor = "yes";
+		};
+		class Lancer_Urban_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "urban";
+			owner = "Lancer";
+			visor = "no";
+		};
+		class Lancer_Urban_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "urban";
+			owner = "Lancer";
+			visor = "yes";
+		};
+		class Lancer_Arid_NV_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "arid";
+			owner = "Lancer";
+			visor = "no";
+		};
+		class Lancer_Arid_Helmet
+		{
+			model = "Stryker_Custom_Helmets";
+			camo = "arid";
+			owner = "Lancer";
+			visor = "yes";
+		};
 	};
 };
 class cfgWeapons
@@ -1249,94 +1202,6 @@ class cfgWeapons
 		displayName = "[Stryker] UNSC Arid CH252 (Havoc)";
 		hiddenSelections[] = { "Camo1" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Havoc_Arid_Helmet.paa" };
-	};
-
-	//Saunder
-	class Saunder_Woodland_NV_Helmet : Stryker_Base_NV_helmet
-	{
-		scope = 2;
-		displayName = "[Stryker] UNSC Woodland CH252 (Saunder/NV)";
-		hiddenSelections[] = { "Camo1" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Saunder_Woodland_Helmet.paa" };
-	};
-	class Saunder_Woodland_Helmet : Stryker_Base_helmet
-	{
-		scope = 2;
-		displayName = "[Stryker] UNSC Woodland CH252 (Saunder)";
-		hiddenSelections[] = { "Camo1" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Saunder_Woodland_Helmet.paa" };
-	};
-	class Saunder_Urban_NV_Helmet : Stryker_Base_NV_helmet
-	{
-		scope = 2;
-		displayName = "[Stryker] UNSC Urban CH252 (Saunder/NV)";
-		hiddenSelections[] = { "Camo1" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Saunder_Urban_Helmet.paa" };
-	};
-	class Saunder_Urban_Helmet : Stryker_Base_helmet
-	{
-		scope = 2;
-		displayName = "[Stryker] UNSC Urban CH252 (Saunder)";
-		hiddenSelections[] = { "Camo1" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Saunder_Urban_Helmet.paa" };
-	};
-	class Saunder_Arid_NV_Helmet : Stryker_Base_NV_helmet
-	{
-		scope = 2;
-		displayName = "[Stryker] UNSC Arid CH252 (Saunder/NV)";
-		hiddenSelections[] = { "Camo1" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Saunder_Arid_Helmet.paa" };
-	};
-	class Saunder_Arid_Helmet : Stryker_Base_helmet
-	{
-		scope = 2;
-		displayName = "[Stryker] UNSC Arid CH252 (Saunder)";
-		hiddenSelections[] = { "Camo1" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Saunder_Arid_Helmet.paa" };
-	};
-
-	//Marshall
-	class Marshall_Woodland_NV_Helmet : Stryker_Base_NV_helmet
-	{
-		scope = 2;
-		displayName = "[Stryker] UNSC Woodland CH252 (Marshall/NV)";
-		hiddenSelections[] = { "Camo1" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Marshall_Woodland_Helmet.paa" };
-	};
-	class Marshall_Woodland_Helmet : Stryker_Base_helmet
-	{
-		scope = 2;
-		displayName = "[Stryker] UNSC Woodland CH252 (Marshall)";
-		hiddenSelections[] = { "Camo1" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Marshall_Woodland_Helmet.paa" };
-	};
-	class Marshall_Urban_NV_Helmet : Stryker_Base_NV_helmet
-	{
-		scope = 2;
-		displayName = "[Stryker] UNSC Urban CH252 (Marshall/NV)";
-		hiddenSelections[] = { "Camo1" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Marshall_Urban_Helmet.paa" };
-	};
-	class Marshall_Urban_Helmet : Stryker_Base_helmet
-	{
-		scope = 2;
-		displayName = "[Stryker] UNSC Urban CH252 (Marshall)";
-		hiddenSelections[] = { "Camo1" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Marshall_Urban_Helmet.paa" };
-	};
-	class Marshall_Arid_NV_Helmet : Stryker_Base_NV_helmet
-	{
-		scope = 2;
-		displayName = "[Stryker] UNSC Arid CH252 (Marshall/NV)";
-		hiddenSelections[] = { "Camo1" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Marshall_Arid_Helmet.paa" };
-	};
-	class Marshall_Arid_Helmet : Stryker_Base_helmet
-	{
-		scope = 2;
-		displayName = "[Stryker] UNSC Arid CH252 (Marshall)";
-		hiddenSelections[] = { "Camo1" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Marshall_Arid_Helmet.paa" };
 	};
 
 	//Fangirl
@@ -1953,5 +1818,49 @@ class cfgWeapons
 		displayName = "[Stryker] UNSC Arid CH252 (Aturr)";
 		hiddenSelections[] = { "Camo1" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Aturr_Arid_Helmet.paa" };
+	};
+
+	//Lancer
+	class Lancer_Woodland_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Woodland CH252 (Lancer/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Lancer_Woodland_Helmet.paa" };
+	};
+	class Lancer_Woodland_Helmet : Stryker_Base_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Woodland CH252 (Lancer)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Lancer_Woodland_Helmet.paa" };
+	};
+	class Lancer_Urban_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Urban CH252 (Lancer/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Lancer_Urban_Helmet.paa" };
+	};
+	class Lancer_Urban_Helmet : Stryker_Base_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Urban CH252 (Lancer)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Lancer_Urban_Helmet.paa" };
+	};
+	class Lancer_Arid_NV_Helmet : Stryker_Base_NV_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Arid CH252 (Lancer/NV)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Lancer_Arid_Helmet.paa" };
+	};
+	class Lancer_Arid_Helmet : Stryker_Base_helmet
+	{
+		scope = 2;
+		displayName = "[Stryker] UNSC Arid CH252 (Lancer)";
+		hiddenSelections[] = { "Camo1" };
+		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Lancer_Arid_Helmet.paa" };
 	};
 };

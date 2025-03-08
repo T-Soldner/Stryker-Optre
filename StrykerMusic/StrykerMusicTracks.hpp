@@ -82,3 +82,17 @@ class YouThinkIAintWorthADollarB
 	duration = 157;
 	musicClass = "StrykerNHMusic";
 };
+class AceCombat7Archange
+{
+	name = "Ace Combat 7 - Archange";
+	sound[] = { "Strykermusic\data\Tracks\Archange.ogg",db + 0,1 };
+	duration = 226;
+	musicClass = "StrykerNHMusic";
+};
+class GoGoPowerRangersInstrumental
+{
+	name = "Power Rangers Theme Instrumental";
+	sound[] = { "Strykermusic\data\Tracks\PowerRangersThemeInstrumental.ogg",db + 0,1 };
+	duration = 364;
+	musicClass = "StrykerNHMusic";
+};

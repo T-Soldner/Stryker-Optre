@@ -111,21 +111,15 @@ class XtdGearModels
 			{
 				alwaysSelectable = 1;
 				label = "Owner";
-				values[] = { "Soldner","Havoc","Saunder","Fangirl","Marshall","Timber","Reject","Wolf","Milkshake","Vyke","Aturr","Ksiazek" };
+				values[] = { "Soldner","Havoc","Fangirl","Timber","Reject","Wolf","Milkshake","Vyke","Aturr","Ksiazek" };
 				class Soldner {
 					label = "Soldner";
 				};
 				class Havoc {
 					label = "Havoc";
 				};
-				class Saunder {
-					label = "Saunder";
-				};
 				class Fangirl {
 					label = "Fangirl";
-				};
-				class Marshall {
-					label = "Marshall";
 				};
 				class Timber {
 					label = "Timber";
@@ -366,26 +360,6 @@ class XtdGearInfos
 			owner = "Havoc";
 		};
 
-		//Saunder
-		class Stryker_U_Saunder_Woodland_uniform
-		{
-			model = "Stryker_Custom_Uniforms";
-			camo = "woodland";
-			owner = "Saunder";
-		};
-		class Stryker_U_Saunder_Urban_uniform
-		{
-			model = "Stryker_Custom_Uniforms";
-			camo = "urban";
-			owner = "Saunder";
-		};
-		class Stryker_U_Saunder_Arid_uniform
-		{
-			model = "Stryker_Custom_Uniforms";
-			camo = "arid";
-			owner = "Saunder";
-		};
-
 		//Fangirl
 		class Stryker_U_Fangirl_Woodland_uniform
 		{
@@ -404,26 +378,6 @@ class XtdGearInfos
 			model = "Stryker_Custom_Uniforms";
 			camo = "arid";
 			owner = "Fangirl";
-		};
-
-		//Marshall
-		class Stryker_U_Marshall_Woodland_uniform
-		{
-			model = "Stryker_Custom_Uniforms";
-			camo = "woodland";
-			owner = "Marshall";
-		};
-		class Stryker_U_Marshall_Urban_uniform
-		{
-			model = "Stryker_Custom_Uniforms";
-			camo = "urban";
-			owner = "Marshall";
-		};
-		class Stryker_U_Marshall_Arid_uniform
-		{
-			model = "Stryker_Custom_Uniforms";
-			camo = "arid";
-			owner = "Marshall";
 		};
 
 		//Timber
@@ -804,29 +758,6 @@ class CfgVehicles
 		uniformClass = "Stryker_U_Havoc_Arid_uniform";
 	};
 
-	//Saunder
-	class Saunder_Woodland : Stryker_Base
-	{
-		displayName = "[Stryker] Saunder's Woodland";
-		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Saunder_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Saunder_Woodland_Armor.paa" };
-		uniformClass = "Stryker_U_Saunder_Woodland_uniform";
-	};
-	class Saunder_Urban : Stryker_Base
-	{
-		displayName = "[Stryker] Saunder's Urban";
-		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Saunder_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Saunder_Urban_Armor.paa" };
-		uniformClass = "Stryker_U_Saunder_Urban_uniform";
-	};
-	class Saunder_Arid : Stryker_Base
-	{
-		displayName = "[Stryker] Saunder's Arid";
-		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Saunder_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Saunder_Arid_Armor.paa" };
-		uniformClass = "Stryker_U_Saunder_Arid_uniform";
-	};
-
 	//Fangirl
 	class Fangirl_Woodland : Stryker_Base
 	{
@@ -848,29 +779,6 @@ class CfgVehicles
 		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
 		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Fangirl_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Fangirl_Arid_Armor.paa" };
 		uniformClass = "Stryker_U_Fangirl_Arid_uniform";
-	};
-
-	//Marshall
-	class Marshall_Woodland : Stryker_Base
-	{
-		displayName = "[Stryker] Marshall's Woodland";
-		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Marshall_Woodland_Top.paa","\StrykerGear\Data\Stryker_Woodland_Pants.paa","\StrykerGear\Data\Marshall_Woodland_Armor.paa" };
-		uniformClass = "Stryker_U_Marshall_Woodland_uniform";
-	};
-	class Marshall_Urban : Stryker_Base
-	{
-		displayName = "[Stryker] Marshall's Urban";
-		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Marshall_Urban_Top.paa","\StrykerGear\Data\Stryker_Urban_Pants.paa","\StrykerGear\Data\Marshall_Urban_Armor.paa" };
-		uniformClass = "Stryker_U_Marshall_Urban_uniform";
-	};
-	class Marshall_Arid : Stryker_Base
-	{
-		displayName = "[Stryker] Marshall's Arid";
-		hiddenSelections[] = { "Camo1","Camo2","Camo3" };
-		hiddenSelectionsTextures[] = { "\StrykerGear\Data\Marshall_Arid_Top.paa","\StrykerGear\Data\Stryker_Arid_Pants.paa","\StrykerGear\Data\Marshall_Arid_Armor.paa" };
-		uniformClass = "Stryker_U_Marshall_Arid_uniform";
 	};
 
 	//Timber
@@ -1434,44 +1342,6 @@ class cfgWeapons
 		};
 	};
 
-	//Saunder
-	class Stryker_U_Saunder_Woodland_uniform : Stryker_U_Base
-	{
-		scope = 2;
-		allowedSlots[] = { 901 };
-		displayName = "[Stryker] Saunder's Woodland";
-		class ItemInfo : UniformItem
-		{
-			uniformClass = "Saunder_Woodland";
-			containerClass = "Supply100";
-			uniformType = "Neopren";
-		};
-	};
-	class Stryker_U_Saunder_Urban_uniform : Stryker_U_Base
-	{
-		scope = 2;
-		allowedSlots[] = { 901 };
-		displayName = "[Stryker] Saunder's Urban";
-		class ItemInfo : UniformItem
-		{
-			uniformClass = "Saunder_Urban";
-			containerClass = "Supply100";
-			uniformType = "Neopren";
-		};
-	};
-	class Stryker_U_Saunder_Arid_uniform : Stryker_U_Base
-	{
-		scope = 2;
-		allowedSlots[] = { 901 };
-		displayName = "[Stryker] Saunder's Arid";
-		class ItemInfo : UniformItem
-		{
-			uniformClass = "Saunder_Arid";
-			containerClass = "Supply100";
-			uniformType = "Neopren";
-		};
-	};
-
 	//Fangirl
 	class Stryker_U_Fangirl_Woodland_uniform : Stryker_U_Base
 	{
@@ -1505,44 +1375,6 @@ class cfgWeapons
 		class ItemInfo : UniformItem
 		{
 			uniformClass = "Fangirl_Arid";
-			containerClass = "Supply100";
-			uniformType = "Neopren";
-		};
-	};
-
-	//Marshall
-	class Stryker_U_Marshall_Woodland_uniform : Stryker_U_Base
-	{
-		scope = 2;
-		allowedSlots[] = { 901 };
-		displayName = "[Stryker] Marshall's Woodland";
-		class ItemInfo : UniformItem
-		{
-			uniformClass = "Marshall_Woodland";
-			containerClass = "Supply100";
-			uniformType = "Neopren";
-		};
-	};
-	class Stryker_U_Marshall_Urban_uniform : Stryker_U_Base
-	{
-		scope = 2;
-		allowedSlots[] = { 901 };
-		displayName = "[Stryker] Marshall's Urban";
-		class ItemInfo : UniformItem
-		{
-			uniformClass = "Marshall_Urban";
-			containerClass = "Supply100";
-			uniformType = "Neopren";
-		};
-	};
-	class Stryker_U_Marshall_Arid_uniform : Stryker_U_Base
-	{
-		scope = 2;
-		allowedSlots[] = { 901 };
-		displayName = "[Stryker] Marshall's Arid";
-		class ItemInfo : UniformItem
-		{
-			uniformClass = "Marshall_Arid";
 			containerClass = "Supply100";
 			uniformType = "Neopren";
 		};
