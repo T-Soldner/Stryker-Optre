@@ -73,6 +73,10 @@ class CfgEditorSubcategories
 	{
 		displayName = "Drones";
 	};
+	class Stryker_MEU_EdSubCat_Supplies
+	{
+		displayName = "Supplies";
+	};
 };
 class RscPicture{};
 class RscActiveText{};

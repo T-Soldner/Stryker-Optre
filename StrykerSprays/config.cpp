@@ -11,7 +11,7 @@ class CfgPatches
 		requiredVersion = 1.60;
 		// Required addons, used for setting load order. (CfgPatches classname NOT PBO filename!)
 		// When any of the addons are missing, a pop-up warning will appear when launching the game.
-		requiredAddons[] = { "A3_Data_F_Decade_Loadorder" };
+		requiredAddons[] = { "A3_Data_F_Decade_Loadorder", "cba_main", "ace_tagging" };
 		// List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content (units and groups) unlocking.
 		units[] = {};
 		// List of weapons (CfgWeapons classes) contained in the addon.
@@ -42,7 +42,7 @@ class cfgWeapons
 	{
 		author = "Soldner";
 		scope = 2;
-		displayname = "[Stryker] 1-1 Spray Paint";
+		displayname = "[Stryker] 1-2 Spray Paint";
 		descriptionShort = "An item that lets you tag walls.";
 		model = "\A3\Structures_F\Items\Food\Can_V3_F.p3d";
 		icon = "StrykerSprays\Sprays\logo.paa";
