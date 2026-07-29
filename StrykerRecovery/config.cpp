@@ -75,7 +75,7 @@ class CfgVehicles
 		transportRepair = 200000000;
 
 		StrykerRecovery_isDepot = 1;
-		StrykerRecovery_recoveryRadius = 30;
+		StrykerRecovery_recoveryRadius = 50;
 	};
 
 	class Stryker_Module_RegisterRecoverableVehicle: Module_F

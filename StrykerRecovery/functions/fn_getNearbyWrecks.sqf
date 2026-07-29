@@ -6,7 +6,7 @@ params [
 if (isNull _depot) exitWith {[]};
 
 if (_radius < 0) then {
-	_radius = _depot getVariable ["StrykerRecovery_recoveryRadius", 30];
+	_radius = _depot getVariable ["StrykerRecovery_recoveryRadius", 50];
 };
 
 private _wrecks = missionNamespace getVariable ["StrykerRecovery_wrecks", []];
