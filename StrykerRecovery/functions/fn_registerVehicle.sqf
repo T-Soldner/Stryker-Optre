@@ -15,12 +15,11 @@ if (_respawnClass isEqualTo "") then {
 };
 
 private _textures = [];
-for "_index" from 0 to 15 do {
-	private _texture = _vehicle getObjectTexture _index;
-	if !(_texture isEqualTo "") then {
-		_textures pushBack [_index, _texture];
+{
+	if !(_x isEqualTo "") then {
+		_textures pushBack [_forEachIndex, _x];
 	};
-};
+} forEach (getObjectTextures _vehicle);
 
 _vehicle setVariable ["StrykerRecovery_registered", true, true];
 _vehicle setVariable ["StrykerRecovery_isWreck", false, true];

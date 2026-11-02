@@ -12,12 +12,14 @@ class CfgPatches
 			"Stryker_Core",
 			"Stryker_Sprays",
 			"OPTRE_Misc",
+			"LM_OPCAN_UNSC",
 			"TCP_Compat_ACE_Medical_Treatment",
 			"adapterusSUSmellee",
 			"ace_arsenal",
 			"ace_captives",
 			"ace_flashlights",
 			"ace_medical_treatment",
+			"ace_repair",
 			"ace_interact_menu",
 			"ace_dragging",
 			"ace_cargo",
@@ -36,6 +38,7 @@ class CfgFunctions
 		{
 			file = "StrykerArsenal\functions";
 			class initLimitedArsenal {};
+			class setArsenalPermissions {};
 		};
 	};
 };
@@ -86,6 +89,27 @@ class CfgVehicles
 				selection = "";
 				displayName = "Interactions";
 				condition = "true";
+
+				class StrykerArsenal_grantMedic
+				{
+					displayName = "Grant Medic Permissions";
+					condition = "alive _player";
+					statement = "[_player, 'medic'] call Stryker_fnc_setArsenalPermissions";
+				};
+
+				class StrykerArsenal_grantEngineer
+				{
+					displayName = "Grant Engineer Permissions";
+					condition = "alive _player";
+					statement = "[_player, 'engineer'] call Stryker_fnc_setArsenalPermissions";
+				};
+
+				class StrykerArsenal_removePermissions
+				{
+					displayName = "Remove All Permissions";
+					condition = "alive _player";
+					statement = "[_player, 'none'] call Stryker_fnc_setArsenalPermissions";
+				};
 			};
 		};
 

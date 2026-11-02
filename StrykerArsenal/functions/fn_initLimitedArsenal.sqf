@@ -228,7 +228,8 @@ private _magazines = [
 	"TCP_Magazine_8Rnd_12x30_Mag",
 	"TCP_T14_Remote_Mag",
 	"ACE_painkillers",
-	"TCP_ACE_BiomedicalFoam"
+	"TCP_ACE_BiomedicalFoam",
+	"Laserbatteries"
 ];
 
 private _headgear = [
@@ -1813,6 +1814,7 @@ private _utilityItems = [
 	"TCP_UGPS",
 	"TCP_TACPAD",
 	"MineDetector",
+	"ToolKit",
 	"ACE_CableTie",
 	"ACE_DefusalKit",
 	"ACE_EntrenchingTool",
@@ -1881,6 +1883,23 @@ private _utilityItems = [
 	"OPTRE_NVG_HUL_UAB_HURS",
 	"OPTRE_NVG_MVI_HURS",
 	"OPTRE_NVG_UAB_HURS",
+	"LM_OPCAN_Eyepiece",
+	"LM_OPCAN_Shemagh",
+	"LM_OPCAN_UP_Shemagh",
+	"LM_OPCAN_DES_Shemagh",
+	"LM_OPCAN_DES_UP_Shemagh",
+	"LM_OPCAN_URB_Shemagh",
+	"LM_OPCAN_URB_UP_Shemagh",
+	"LM_OPCAN_BRW_Shemagh",
+	"LM_OPCAN_BRW_UP_Shemagh",
+	"LM_OPCAN_Shemagheye",
+	"LM_OPCAN_UP_Shemagheye",
+	"LM_OPCAN_DES_Shemagheye",
+	"LM_OPCAN_DES_UP_Shemagheye",
+	"LM_OPCAN_URB_Shemagheye",
+	"LM_OPCAN_URB_UP_Shemagheye",
+	"LM_OPCAN_BRW_Shemagheye",
+	"LM_OPCAN_BRW_UP_Shemagheye",
 	"G_AirPurifyingRespirator_01_F",
 	"G_AirPurifyingRespirator_01_nofilter_F",
 	"G_AirPurifyingRespirator_02_black_F",

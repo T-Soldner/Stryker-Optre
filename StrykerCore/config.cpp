@@ -1,3 +1,12 @@
+// Release version: MAJOR.MINOR.FEATURE.REVISION
+// MAJOR: breaking compatibility or dependency restructuring.
+// MINOR: a new PBO or major subsystem; reset FEATURE and REVISION to 0.
+// FEATURE: substantial content in an existing PBO, such as a new vehicle, faction, or system; reset REVISION to 0.
+// REVISION: routine arsenal, texture, balance, and config updates.
+#define STRYKER_VERSION 1.0
+#define STRYKER_VERSION_STR "1.0.0.1"
+#define STRYKER_VERSION_AR 1,0,0,1
+
 class CfgPatches
 {
 	class Stryker_Core
@@ -6,6 +15,9 @@ class CfgPatches
 		name = "Stryker Aux Mod";
 		author = "Soldner";
 		url = "https://discord.gg/Y6AtjkfaEW";
+		version = STRYKER_VERSION;
+		versionStr = STRYKER_VERSION_STR;
+		versionAr[] = {STRYKER_VERSION_AR};
 
 		// Minimum compatible version. When the game's version is lower, pop-up warning will appear when launching the game. Note: was disabled on purpose some time late into Arma 2: OA.
 		requiredVersion = 1.60;
@@ -22,6 +34,19 @@ class CfgPatches
 
 		// Optional. If this is 1, if any of requiredAddons[] entry is missing in your game the entire config will be ignored and return no error (but in rpt) so useful to make a compat Mod (Since Arma 3 2.14)
 		skipWhenMissingDependencies = 1;
+	};
+};
+class CfgSettings
+{
+	class CBA
+	{
+		class Versioning
+		{
+			class Stryker
+			{
+				main_addon = "Stryker_Core";
+			};
+		};
 	};
 };
 class CfgMods
